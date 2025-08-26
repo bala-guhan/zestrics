@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 
 interface Partner {
   name: string;

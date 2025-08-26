@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { WobbleCard } from "./wobble-card";
 import { BarChart3, Brain, Database, TrendingUp, Shield, Zap, Globe, Cpu } from "lucide-react";
 

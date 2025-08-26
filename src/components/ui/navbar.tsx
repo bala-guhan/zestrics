@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Menu, MenuItem, ProductItem, HoveredLink } from "./navbar-menu";
 
 export const Navbar = () => {

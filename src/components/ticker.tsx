@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { NumberTicker } from "./magicui/number-ticker";
 import { Clock, Users, Briefcase } from "lucide-react";
 
