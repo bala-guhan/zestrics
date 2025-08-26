@@ -7,6 +7,17 @@ export default {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			'sans': ['Manrope', 'system-ui', 'sans-serif'],
+  			'mono': ['Fira Code', 'monospace'],
+  		},
+  		fontWeight: {
+  			'light': '300',
+  			'normal': '400',
+  			'medium': '500',
+  			'semibold': '600',
+  			'bold': '700',
+  		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
