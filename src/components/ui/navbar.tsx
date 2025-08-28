@@ -12,55 +12,69 @@ export const Navbar = () => {
         <div className="flex items-center px-6">
           {/* Logo */}
           <div className="flex-shrink-0 mr-8">
-            <h1 className="text-xl font-bold text-black dark:text-white">
+            <a href="/" className="text-xl font-bold text-black dark:text-white">
               Zestrics
-            </h1>
+            </a>
           </div>
 
           {/* Desktop Navigation Menu */}
           <div className="hidden md:flex items-center space-x-6">
             <Menu setActive={setActive}>
-              <MenuItem setActive={setActive} active={active} item="Products">
+              <MenuItem setActive={setActive} active={active} item="Services">
                 <div className="text-sm grid grid-cols-2 gap-10 p-4">
-                  <ProductItem
-                    title="Data Analytics"
-                    description="Transform raw data into actionable insights"
-                    href="/analytics"
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=140&h=70&fit=crop"
-                  />
                   <ProductItem
                     title="Business Intelligence"
                     description="Powerful BI tools for data-driven decisions"
-                    href="/bi"
+                    href="/services"
                     src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=140&h=70&fit=crop"
+                  />
+                  <ProductItem
+                    title="Data Engineering"
+                    description="Build robust, scalable data pipelines"
+                    href="/services"
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=140&h=70&fit=crop"
+                  />
+                  <ProductItem
+                    title="AI Consulting"
+                    description="Expert guidance for AI implementation"
+                    href="/services"
+                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=140&h=70&fit=crop"
                   />
                   <ProductItem
                     title="Machine Learning"
                     description="AI-powered predictive analytics"
-                    href="/ml"
+                    href="/services"
                     src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=140&h=70&fit=crop"
                   />
                   <ProductItem
-                    title="Data Visualization"
-                    description="Beautiful charts and interactive dashboards"
-                    href="/viz"
+                    title="Data Science"
+                    description="Advanced analytics and insights"
+                    href="/services"
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=140&h=70&fit=crop"
                   />
-                </div>
-              </MenuItem>
-              <MenuItem setActive={setActive} active={active} item="Solutions">
-                <div className="flex flex-col space-y-4 text-sm">
-                  <HoveredLink href="/enterprise">Enterprise Solutions</HoveredLink>
-                  <HoveredLink href="/startups">Startup Solutions</HoveredLink>
-                  <HoveredLink href="/consulting">Consulting Services</HoveredLink>
-                  <HoveredLink href="/custom">Custom Development</HoveredLink>
+                  <ProductItem
+                    title="Generative AI"
+                    description="Cutting-edge AI content generation"
+                    href="/services"
+                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=140&h=70&fit=crop"
+                  />
+                  <ProductItem
+                    title="Data Modeling"
+                    description="Design efficient data architectures"
+                    href="/services"
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=140&h=70&fit=crop"
+                  />
+                  <ProductItem
+                    title="View All Services"
+                    description="Explore our complete service portfolio"
+                    href="/services"
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=140&h=70&fit=crop"
+                  />
                 </div>
               </MenuItem>
               <MenuItem setActive={setActive} active={active} item="Resources">
                 <div className="flex flex-col space-y-4 text-sm">
                   <HoveredLink href="/blog">Blog</HoveredLink>
-                  <HoveredLink href="/documentation">Documentation</HoveredLink>
-                  <HoveredLink href="/tutorials">Tutorials</HoveredLink>
                   <HoveredLink href="/case-studies">Case Studies</HoveredLink>
                 </div>
               </MenuItem>
@@ -69,7 +83,6 @@ export const Navbar = () => {
                   <HoveredLink href="/about">About Us</HoveredLink>
                   <HoveredLink href="/careers">Careers</HoveredLink>
                   <HoveredLink href="/contact">Contact</HoveredLink>
-                  <HoveredLink href="/press">Press</HoveredLink>
                 </div>
               </MenuItem>
             </Menu>
@@ -123,43 +136,36 @@ export const Navbar = () => {
               <div className="space-y-4">
                 <div>
                   <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
-                    Products
+                    Services
                   </h3>
                   <div className="space-y-2">
-                    <a href="/analytics" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Data Analytics
-                    </a>
-                    <a href="/bi" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
                       Business Intelligence
                     </a>
-                    <a href="/ml" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                      Data Engineering
+                    </a>
+                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                      AI Consulting
+                    </a>
+                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
                       Machine Learning
                     </a>
-                    <a href="/viz" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Data Visualization
+                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                      Data Science
+                    </a>
+                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                      Generative AI
+                    </a>
+                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                      Full Stack Development
+                    </a>
+                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 font-semibold">
+                      View All Services →
                     </a>
                   </div>
                 </div>
                 
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
-                    Solutions
-                  </h3>
-                  <div className="space-y-2">
-                    <a href="/enterprise" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Enterprise Solutions
-                    </a>
-                    <a href="/startups" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Startup Solutions
-                    </a>
-                    <a href="/consulting" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Consulting Services
-                    </a>
-                    <a href="/custom" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Custom Development
-                    </a>
-                  </div>
-                </div>
 
                 <div>
                   <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
@@ -168,12 +174,6 @@ export const Navbar = () => {
                   <div className="space-y-2">
                     <a href="/blog" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
                       Blog
-                    </a>
-                    <a href="/documentation" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Documentation
-                    </a>
-                    <a href="/tutorials" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Tutorials
                     </a>
                     <a href="/case-studies" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
                       Case Studies
@@ -194,10 +194,7 @@ export const Navbar = () => {
                     </a>
                     <a href="/contact" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
                       Contact
-                    </a>
-                    <a href="/press" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Press
-                    </a>
+                    </a>  
                   </div>
                 </div>
               </div>

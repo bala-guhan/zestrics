@@ -1,89 +1,82 @@
 "use client";
 import { WobbleCard } from "./wobble-card";
-import { BarChart3, Brain, Database, TrendingUp, Shield, Zap, Globe, Cpu } from "lucide-react";
 
 export const WobbleCardsSection = () => {
   const features = [
-    // Row 1: 8 cols + 4 cols
+    // Row 1: 8 cols + 4 cols (2nd card extends to row 2)
     {
-      icon: <BarChart3 className="w-8 h-8 text-white" />,
-      title: "Advanced Analytics",
-      description: "Transform raw data into actionable insights with our cutting-edge analytics platform.",
-      gradient: "from-blue-600 to-purple-600",
-      colSpan: "col-span-12 md:col-span-8"
+      title: "Improved Decision-Making",
+      description: "Leaders gain real-time visibility into performance, enabling quick and confident choices.",
+      colSpan: "col-span-12 lg:col-span-8",
+      rowSpan: "row-span-1",
+      image: "/wmremove-transformed.jpeg"
     },
     {
-      icon: <Brain className="w-8 h-8 text-white" />,
-      title: "AI & Machine Learning",
-      description: "Leverage the power of artificial intelligence to predict trends and automate processes.",
-      gradient: "from-purple-600 to-pink-600",
-      colSpan: "col-span-12 md:col-span-4"
+      title: "Operational Efficiency",
+      description: "Identifies bottlenecks and inefficiencies, reducing costs and saving time.",
+      colSpan: "col-span-12 lg:col-span-4",
+      rowSpan: "row-span-2",
+      image: "/wmremove-transformed.jpeg"
     },
-    // Row 2: 4 cols + 4 cols + 4 cols
+    // Row 2: 4 cols + 4 cols (remaining 8 cols split equally)
     {
-      icon: <Database className="w-8 h-8 text-white" />,
-      title: "Data Infrastructure",
-      description: "Build robust, scalable data pipelines that handle millions of records efficiently.",
-      gradient: "from-green-600 to-blue-600",
-      colSpan: "col-span-12 md:col-span-4"
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8 text-white" />,
-      title: "Business Intelligence",
-      description: "Create stunning dashboards and reports that drive data-driven decision making.",
-      gradient: "from-orange-600 to-red-600",
-      colSpan: "col-span-12 md:col-span-4"
+      title: "Customer Understanding",
+      description: "Analyzes customer behavior to improve personalization, retention, and satisfaction.",
+      colSpan: "col-span-12 lg:col-span-4",
+      rowSpan: "row-span-1",
+      image: "/wmremove-transformed.jpeg"
     },
     {
-      icon: <Shield className="w-8 h-8 text-white" />,
-      title: "Enterprise Security",
-      description: "Bank-grade security protocols to protect your most sensitive business data.",
-      gradient: "from-indigo-600 to-purple-600",
-      colSpan: "col-span-12 md:col-span-4"
+      title: "Revenue Growth",
+      description: "Supports sales forecasting, pricing optimization, and market trend analysis.",
+      colSpan: "col-span-12 lg:col-span-4",
+      rowSpan: "row-span-1",
+      image: "/wmremove-transformed.jpeg"
     },
-    // Row 3: 2 cols + 6 cols + 4 cols
+    // Row 3: 6 cols + 6 cols
     {
-      icon: <Zap className="w-8 h-8 text-white" />,
-      title: "Real-time Processing",
-      description: "Process data in real-time with sub-second latency for instant insights.",
-      gradient: "from-yellow-600 to-orange-600",
-      colSpan: "col-span-12 md:col-span-2"
-    },
-    {
-      icon: <Globe className="w-8 h-8 text-white" />,
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure that grows with your business needs and requirements.",
-      gradient: "from-teal-600 to-cyan-600",
-      colSpan: "col-span-12 md:col-span-6"
+      title: "Risk Management",
+      description: "Detects anomalies and patterns that help prevent fraud, compliance issues, and financial risks.",
+      colSpan: "col-span-12 lg:col-span-6",
+      rowSpan: "row-span-1",
+      image: "/wmremove-transformed.jpeg"
     },
     {
-      icon: <Cpu className="w-8 h-8 text-white" />,
-      title: "Performance Optimization",
-      description: "Optimize your systems for maximum performance and efficiency across all platforms.",
-      gradient: "from-rose-600 to-pink-600",
-      colSpan: "col-span-12 md:col-span-4"
+      title: "Strategic Planning",
+      description: "Provides long-term insights for capacity planning, product launches, and market expansion.",
+      colSpan: "col-span-12 lg:col-span-6",
+      rowSpan: "row-span-1",
+      image: "/wmremove-transformed.jpeg"
     }
   ];
 
   return (
-    <div className="py-5 px-4">
+    <div className="py-5 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-12 gap-6">
+        <div className="grid grid-cols-12 gap-2 auto-rows-fr">
           {features.map((feature, index) => (
             <WobbleCard
               key={index}
-              containerClassName={`bg-gradient-to-br ${feature.gradient} ${feature.colSpan}`}
-              className="flex flex-col items-center text-center space-y-4"
+              containerClassName={`${feature.colSpan} ${feature.rowSpan} min-h-32 lg:min-h-48 border border-2 `}
+              className="text-left"
             >
-              <div className="p-3 rounded-full bg-white/20 backdrop-blur-sm">
-                {feature.icon}
+              {feature.image && (
+                <div className="absolute inset-0 z-0">
+                  <img 
+                    src={feature.image} 
+                    alt={feature.title}
+                    className="w-full h-full object-cover rounded-2xl opacity-80"
+                  />
+                </div>
+              )}
+              <div className="relative z-10">
+                <h3 className="text-2xl font-semibold text-black leading-tight">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-500 leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-white">
-                {feature.title}
-              </h3>
-              <p className="text-white/90 text-sm leading-relaxed">
-                {feature.description}
-              </p>
             </WobbleCard>
           ))}
         </div>
