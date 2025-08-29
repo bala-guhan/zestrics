@@ -7,6 +7,9 @@ import { AuroraText } from "../components/magicui/aurora-text";
 import { CanvasRevealEffectDemo } from "../components/ui/canvas-reveal-demo";
 import { PartnersSection } from "../components/ui/partners-section";
 import { WobbleCardsSection } from "../components/ui/wobble-cards-section";
+import { VisionMissionCards } from "../components/ui/vision-mission-cards";
+import { TeamSection } from "../components/ui/team-section";
+
 
 export const HomePage = () => {
   return (
@@ -65,6 +68,31 @@ export const HomePage = () => {
       
 
       <WobbleCardsSection />
+
+      <div id="about-section" className="px-4 md:px-32 bg-white mx-auto pt-10">
+        <h2 className="text-3xl md:text-5xl mb-2">About us</h2>
+        <TextAnimate className="text- text-gray-500 bg-white">
+        Zestrics is a leading data science firm and provider of AI-powered solutions. We are a trusted consulting and technology solutions partner dedicated to helping organizations navigate the complexities of a rapidly evolving digital world. With a strong foundation in Big Data, Artificial Intelligence, Machine Learning, Software Development, and Generative AI & GPT-driven services, we empower enterprises to transform challenges into opportunities and achieve sustainable growth.
+        For 13 years, we’ve been helping businesses turn data into clarity and insights into action. With our new identity, we remain committed to reimagining decision-making through analytics, business intelligence, and future-ready data solutions.
+        </TextAnimate>
+
+
+        <div className="flex flex-col text-center space-x-3 pt-10">
+        {/* <NumberTicker
+            value={13}
+            className="whitespace-pre-wrap text-6xl font-medium tracking-tighter text-black dark:text-white"
+          /> */}
+          {/* <TextAnimate className="text- text-gray-500 bg-white">
+              Years of experience
+          </TextAnimate> */}
+         
+        </div>
+      </div>
+
+      <TeamSection />
+
+      <VisionMissionCards />
+
     </div>
   );
 };

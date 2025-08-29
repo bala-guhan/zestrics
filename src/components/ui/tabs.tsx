@@ -8,6 +8,7 @@ type Tab = {
   title: string;
   value: string;
   content?: string | React.ReactNode;
+  backgroundImage?: string; // New property for background images
 };
 
 export const Tabs = ({
@@ -63,9 +64,12 @@ export const Tabs = ({
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                 className={cn(
-                  "absolute inset-0 bg-gray-200 dark:bg-zinc-800 rounded-full ",
+                  "absolute inset-0 rounded-full bg-cover bg-center bg-no-repeat",
                   activeTabClassName
                 )}
+                style={{
+                  backgroundImage: "url('/bg-noisy-slate.jpg')",
+                }}
               />
             )}
 
@@ -111,11 +115,15 @@ export const FadeInDiv = ({
             top: hovering ? idx * -50 : 0,
             zIndex: -idx,
             opacity: idx < 3 ? 1 - idx * 0.1 : 0,
+            backgroundImage: tab.backgroundImage ? `url('${tab.backgroundImage}')` : undefined,
+            backgroundSize: tab.backgroundImage ? 'cover' : undefined,
+            backgroundPosition: tab.backgroundImage ? 'center' : undefined,
+            backgroundRepeat: tab.backgroundImage ? 'no-repeat' : undefined,
           }}
           animate={{
             y: isActive(tab) ? [0, 40, 0] : 0,
           }}
-          className={cn("w-full h-full absolute top-0 left-0", className)}
+          className={cn("w-full h-full absolute top-0 left-0 rounded-2xl", className)}
         >
           {tab.content}
         </motion.div>

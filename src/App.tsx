@@ -6,6 +6,7 @@ import { HomePage } from "./pages/HomePage";
 import { ServicesPage } from "./pages/services-page";
 import { CareersPage } from './pages/careers-page';
 import { NotFoundPage } from './pages/404-page';
+import { CaseStudies } from './pages/case-studies';
 
 export default function App() {
   return (
@@ -98,6 +99,15 @@ export default function App() {
             <Navbar />
             <main>
               <CareersPage />
+            </main>
+            <Footer />
+          </div>
+        } />
+        <Route path="/case-studies" element={
+          <div className="min-h-screen bg-gray-100">
+            <Navbar />
+            <main>
+              <CaseStudies />
             </main>
             <Footer />
           </div>

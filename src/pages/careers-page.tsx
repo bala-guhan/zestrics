@@ -1,6 +1,7 @@
 import { TextAnimate } from "../components/magicui/text-animate"
 import { JobCard } from "../components/ui/job-card"
 import { jobsData } from "../data/jobs-data"
+import { CareersPerksSection } from "../components/ui/careers-perks-section"
 import { useState } from "react"
 
 export function CareersPage () {
@@ -29,6 +30,9 @@ export function CareersPage () {
                     Choosing the right partner is as important as choosing the right technology. At Zestrics, we don't just deliver services, we build long-term partnerships that create measurable business impact.
                 </TextAnimate>
             </div>
+
+            {/* Careers Perks Section */}
+            <CareersPerksSection />
 
             {/* Category Filter */}
             <div className="max-w-6xl mx-auto px-4 mb-12">

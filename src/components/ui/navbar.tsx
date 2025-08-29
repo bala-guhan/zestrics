@@ -25,43 +25,43 @@ export const Navbar = () => {
                   <ProductItem
                     title="Business Intelligence"
                     description="Powerful BI tools for data-driven decisions"
-                    href="/services"
+                    href="/services#business-intelligence"
                     src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=140&h=70&fit=crop"
                   />
                   <ProductItem
                     title="Data Engineering"
                     description="Build robust, scalable data pipelines"
-                    href="/services"
+                    href="/services#data-engineering"
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=140&h=70&fit=crop"
                   />
                   <ProductItem
                     title="AI Consulting"
                     description="Expert guidance for AI implementation"
-                    href="/services"
+                    href="/services#ai-chatbot-development"
                     src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=140&h=70&fit=crop"
                   />
                   <ProductItem
                     title="Machine Learning"
                     description="AI-powered predictive analytics"
-                    href="/services"
+                    href="/services#machine-learning"
                     src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=140&h=70&fit=crop"
                   />
                   <ProductItem
                     title="Data Science"
                     description="Advanced analytics and insights"
-                    href="/services"
+                    href="/services#data-science"
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=140&h=70&fit=crop"
                   />
                   <ProductItem
                     title="Generative AI"
                     description="Cutting-edge AI content generation"
-                    href="/services"
+                    href="/services#generative-ai"
                     src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=140&h=70&fit=crop"
                   />
                   <ProductItem
-                    title="Data Modeling"
-                    description="Design efficient data architectures"
-                    href="/services"
+                    title="Full Stack Development"
+                    description="Complete web and mobile solutions"
+                    href="/services#full-stack-development"
                     src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=140&h=70&fit=crop"
                   />
                   <ProductItem
@@ -78,13 +78,13 @@ export const Navbar = () => {
                   <HoveredLink href="/case-studies">Case Studies</HoveredLink>
                 </div>
               </MenuItem>
-              <MenuItem setActive={setActive} active={active} item="Company">
-                <div className="flex flex-col space-y-4 text-sm">
-                  <HoveredLink href="/about">About Us</HoveredLink>
-                  <HoveredLink href="/careers">Careers</HoveredLink>
-                  <HoveredLink href="/contact">Contact</HoveredLink>
-                </div>
-              </MenuItem>
+                             <MenuItem setActive={setActive} active={active} item="Company">
+                 <div className="flex flex-col space-y-4 text-sm">
+                   <HoveredLink href="/#about-section">About Us</HoveredLink>
+                   <HoveredLink href="/careers">Careers</HoveredLink>
+                   <HoveredLink href="/#footer">Contact</HoveredLink>
+                 </div>
+               </MenuItem>
             </Menu>
           </div>
 
@@ -139,25 +139,25 @@ export const Navbar = () => {
                     Services
                   </h3>
                   <div className="space-y-2">
-                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                    <a href="/services#business-intelligence" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
                       Business Intelligence
                     </a>
-                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                    <a href="/services#data-engineering" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
                       Data Engineering
                     </a>
-                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                    <a href="/services#ai-chatbot-development" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
                       AI Consulting
                     </a>
-                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                    <a href="/services#machine-learning" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
                       Machine Learning
                     </a>
-                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                    <a href="/services#data-science" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
                       Data Science
                     </a>
-                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                    <a href="/services#generative-ai" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
                       Generative AI
                     </a>
-                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                    <a href="/services#full-stack-development" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
                       Full Stack Development
                     </a>
                     <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 font-semibold">
@@ -185,14 +185,14 @@ export const Navbar = () => {
                   <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
                     Company
                   </h3>
-                  <div className="space-y-2">
-                    <a href="/about" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      About Us
-                    </a>
+                                     <div className="space-y-2">
+                     <a href="/#about-section" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                       About Us
+                     </a>
                     <a href="/careers" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
                       Careers
                     </a>
-                    <a href="/contact" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
+                    <a href="/#footer" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
                       Contact
                     </a>  
                   </div>

@@ -11,6 +11,7 @@ export interface ServiceData {
   flowchart: string[];
   icon: string;
   gradient: string;
+  backgroundImage?: string; // Added backgroundImage to ServiceData interface
 }
 
 interface ServiceCardProps {
@@ -34,7 +35,13 @@ export const ServiceCard = ({ service, isOpen, onClose }: ServiceCardProps) => {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className={`relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl p-8 text-white ${service.gradient} textured-gradient`}
+            className={`relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl p-8 text-white ${service.backgroundImage ? '' : service.gradient} textured-gradient no-visible-scrollbar`}
+            style={service.backgroundImage ? {
+              backgroundImage: `url(${service.backgroundImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            } : {}}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}

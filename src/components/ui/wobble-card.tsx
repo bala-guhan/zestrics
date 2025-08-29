@@ -2,15 +2,21 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "../../lib/utils";
+import RevenueCard from "../revenue-card";
+import SineSteps from "../strategic-planning-card";
 
 export const WobbleCard = ({
   children,
   containerClassName,
   className,
+  showRevenueBackground = false,
+  showSineStepsBackground = false,
 }: {
   children: React.ReactNode;
   containerClassName?: string;
   className?: string;
+  showRevenueBackground?: boolean;
+  showSineStepsBackground?: boolean;
 }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -48,6 +54,24 @@ export const WobbleCard = ({
             "0 10px 32px rgba(34, 42, 53, 0.12), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.05), 0 4px 6px rgba(34, 42, 53, 0.08), 0 24px 108px rgba(47, 48, 55, 0.10)",
         }}
       >
+        {/* Revenue Card Background */}
+        {showRevenueBackground && (
+          <div className="absolute inset-0 z-0 flex justify-end items-center opacity-100 px-4 py-4 md:px-4 md:py-4">
+            <div className="w-1/2 h-full flex items-center justify-center">
+              <RevenueCard />
+            </div>
+          </div>
+        )}
+        
+        {/* Sine Steps Background */}
+        {showSineStepsBackground && (
+          <div className="absolute inset-0 z-0 flex justify-end items-center opacity-100 px-2 py-2 md:px-2 md:py-2">
+            <div className="w-3/5 h-full flex items-center justify-center">
+              <SineSteps />
+            </div>
+          </div>
+        )}
+        
         <motion.div
           style={{
             transform: isHovering
@@ -57,7 +81,7 @@ export const WobbleCard = ({
           }}
           className={cn("h-full px-2 py-2 sm:px-4 sm:py-4 flex flex-col justify-end", className)}
         >
-          <Noise />
+          {!showRevenueBackground && !showSineStepsBackground && <Noise />}
           {children}
         </motion.div>
       </div>

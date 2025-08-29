@@ -31,9 +31,12 @@ export const ServicesPage = () => {
   const tabs = servicesTabsData.map((serviceTab) => ({
     title: serviceTab.title,
     value: serviceTab.value,
+    backgroundImage: serviceTab.backgroundImage,
     content: (
-      <div className={`w-full overflow-hidden relative h-full rounded-2xl p-6 md:p-10 text-white ${serviceTab.gradient} flex flex-col justify-between`}>
-        <div>
+      <div className={`w-full overflow-hidden relative h-full rounded-2xl p-6 md:p-10 text-white flex flex-col shadow-lg`}>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/20 rounded-2xl"></div>
+        <div className="relative z-10 flex flex-col h-full">
           <div className="flex items-center mb-4">
             <p className="text-3xl md:text-5xl ">{serviceTab.title}</p>
           </div>
@@ -41,26 +44,35 @@ export const ServicesPage = () => {
             Explore our comprehensive {serviceTab.title.toLowerCase()} solutions
           </div>
           
-          {/* Sub-service cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            {serviceTab.subServices.map((subService, subIndex) => (
-              <div
-                key={subIndex}
-                className={`p-4 rounded-lg ${subService.gradient} cursor-pointer hover:scale-105 transition-transform duration-200`}
-                onClick={() => setSelectedSubService(subService)}
-              >
-                <div className="flex items-center mb-2">
-                  {/* <span className="text-2xl mr-2">{subService.icon}</span> */}
-                  <h3 className="text-lg font-semibold">{subService.title}</h3>
+          {/* Sub-service cards - scrollable container */}
+          <div className="flex-1 overflow-y-auto no-visible-scrollbar">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-4">
+              {serviceTab.subServices.map((subService, subIndex) => (
+                <div
+                  key={subIndex}
+                  className="p-4 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-200 bg-cover bg-center bg-no-repeat relative"
+                  style={{
+                    backgroundImage: `url('/noisy-background.jpg')`,
+                  }}
+                  onClick={() => setSelectedSubService(subService)}
+                >
+                  {/* Dark overlay for sub-service cards */}
+                  <div className="absolute inset-0 bg-black/30 rounded-lg"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center mb-2">
+                      {/* <span className="text-2xl mr-2">{subService.icon}</span> */}
+                      <h3 className="text-lg font-semibold">{subService.title}</h3>
+                    </div>
+                    <p className="text-sm text-gray-200 line-clamp-3">
+                      {subService.description.substring(0, 120)}...
+                    </p>
+                    <button className="mt-3 px-3 py-1 bg-white/20 rounded-full text-xs hover:bg-white/30 transition-colors">
+                      Learn More
+                    </button>
+                  </div>
                 </div>
-                <p className="text-sm text-gray-200 line-clamp-3">
-                  {subService.description.substring(0, 120)}...
-                </p>
-                <button className="mt-3 px-3 py-1 bg-white/20 rounded-full text-xs hover:bg-white/30 transition-colors">
-                  Learn More
-                </button>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
