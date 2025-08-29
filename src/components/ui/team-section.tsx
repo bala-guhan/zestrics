@@ -1,5 +1,4 @@
-"use client";
-import React from "react";
+
 import { TextAnimate } from "../magicui/text-animate";
 import { ShinyButton } from "../magicui/shiny-button";
 

@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { ServiceCard } from "../components/ui/service-card";
 import { SubServiceCard } from "../components/ui/sub-service-card";
 import { servicesData, servicesTabsData, SubServiceData } from "../data/services-data";
+import { ShinyButton } from "../components/magicui/shiny-button";
 
 export const ServicesPage = () => {
   const [selectedService, setSelectedService] = useState<number | null>(null);
@@ -116,7 +117,30 @@ export const ServicesPage = () => {
           onClose={() => setSelectedSubService(null)}
         />
       )}
+
+
+
+
+      <div className="px-4 md:px-32 bg-white pt-32">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl md:text-4xl font-semibold mb-2">
+            Ready to build your dream project?
+          </h2>
+          <TextAnimate className="text-gray-600 mb-8 text-lg">
+            Let us help you build your dream project. Our experts in all the mentioned fields will take care of your product needs end to end. Reach out to us and we will talk about your project.
+          </TextAnimate>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <ShinyButton className="bg-gray-700 text-white px-8 py-3 rounded-lg font-medium">
+              Get Started
+            </ShinyButton>
+            <ShinyButton className="bg-white border border-gray-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-50">
+              Learn More
+            </ShinyButton>
+          </div>
+        </div>
+      </div>
     </div>
+
   );
 };
 
