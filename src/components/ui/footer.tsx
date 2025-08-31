@@ -14,11 +14,11 @@ export const Footer = () => {
             </p>
             <div className="flex items-center space-x-4">
               <a 
-                href="mailto:contact@zestrics.ai" 
+                href="mailto:contact@zestrics.com" 
                 className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                <span>contact@zestrics.ai</span>
+                <span>contact@zestrics.com</span>
               </a>
             </div>
           </div>

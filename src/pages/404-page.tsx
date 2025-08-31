@@ -92,10 +92,10 @@ export function NotFoundPage() {
             </p>
             <div className="flex flex-row items-center text-center justify-center sm:flex-row gap-2 text-sm">
               <a 
-                href="mailto:support@zestrics.com" 
+                href="mailto:contact@zestrics.com" 
                 className="text-blue-600 dark:text-blue-400 hover:underline"
               >
-                support@zestrics.com
+                contact@zestrics.com
               </a>
               <span className="hidden sm:inline text-gray-400">|</span>
               <a 

@@ -77,10 +77,10 @@ export const ContactSection = () => {
                 <div className="flex items-center justify-center md:justify-start gap-3">
                   <Mail className="w-6 h-6 text-blue-600" />
                   <a 
-                    href="mailto:info@zestrics.com" 
+                    href="mailto:contact@zestrics.com" 
                     className="text-lg font-medium text-blue-600 hover:text-blue-700 transition-colors"
                   >
-                    info@zestrics.com
+                    contact@zestrics.com
                   </a>
                 </div>
                 
@@ -108,7 +108,7 @@ export const ContactSection = () => {
               >
                 <button
                   onClick={() => {
-                    window.location.href = "mailto:info@zestrics.com";
+                    window.location.href = "mailto:contact@zestrics.com";
                   }}
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
