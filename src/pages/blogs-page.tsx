@@ -109,7 +109,7 @@ export function BlogsPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-wrap justify-center gap-4"
           >
-            {categories.map((category, index) => (
+            {categories.map((category) => (
               <button
                 key={category}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
