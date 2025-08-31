@@ -35,8 +35,12 @@ export const HomePage = () => {
         </div>
         <div className="w-full flex justify-center">
           <div className="max-w-4xl w-full pt-4">
-            <TextAnimate className="text-center text-gray-500">
-              We combine cutting-edge AI and data science expertise with deep industry knowledge to deliver transformative solutions that drive real business growth and competitive advantage.
+            <TextAnimate className="text-center text-gray-500">   
+                We leverage advanced Data Analytics, Business Intelligence (BI), 
+                and AI-driven insights to help organizations unlock the true potential 
+                of their data. By combining technical expertise with deep industry 
+                understanding, we transform raw information into actionable intelligence 
+                that supports strategic decisions, operational efficiency, and revenue growth. Our solutions go beyond dashboards—we build scalable analytics ecosystems that empower businesses to anticipate trends, optimize performance, and gain a sustainable competitive edge in today’s data-driven economy.
             </TextAnimate>
           </div>
         </div>
@@ -46,7 +50,7 @@ export const HomePage = () => {
 
       {/* Services CTA Section */}
       <div className="px-4 md:px-32 bg-white mx-auto py-16 text-center">
-        <h2 className="text-3xl md:text-5xl mb-6">Want to Explore Our Services?</h2>
+        <h2 className="text-3xl md:text-5xl mb-2">Want to Explore Our Services?</h2>
         <TextAnimate className="text-gray-500 bg-white mb-8 text-lg">
           Discover our comprehensive range of AI, data science, and technology solutions designed to transform your business.
         </TextAnimate>
@@ -93,7 +97,7 @@ export const HomePage = () => {
 
       {/* FAQ Section */}
       <FAQSection />
-      
+
     </div>
   );
 };

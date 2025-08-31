@@ -151,7 +151,7 @@ const ParticleRingHero: React.FC = () => {
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="text-center text-white px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl mb-2 md:text-6xl lg:text-7xl font-bold text-slate-100 leading-tight">
-            Turn your <AuroraText colors={['#1e3a8a', '#3b82f6', '#fb923c', '#ea580c']}>Data</AuroraText> into <AuroraText colors={['#1e3a8a', '#3b82f6', '#fb923c', '#ea580c']}>Business</AuroraText> Value
+            Turn your <AuroraText>Data</AuroraText> into <AuroraText>Business</AuroraText> Value
           </h1>
           <TextAnimate 
             className="text-white max-w-5xl mb-2 mx-auto leading-relaxed"

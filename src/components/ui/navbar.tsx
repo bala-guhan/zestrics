@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Menu, MenuItem, HoveredLink } from "./navbar-menu";
+import { MenuItem, HoveredLink } from "./navbar-menu";
 import { navbarData } from "../../data/navbar-data";
 
 export const Navbar = () => {
@@ -46,9 +46,9 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="bg-white/90 backdrop-blur-md rounded-full border border-gray-200/50 dark:bg-black/90 dark:border-gray-700/50 shadow-lg">
-        <div className="flex items-center justify-between px-8 min-w-[800px] lg:min-w-[1000px]">
+    <div className="fixed top-0 left-0 right-0 z-50">
+      <div className="bg-white/90 backdrop-blur-md border-b border-gray-200/50 dark:bg-black/90 dark:border-gray-700/50 shadow-lg">
+        <div className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center">
@@ -61,103 +61,99 @@ export const Navbar = () => {
           </div>
 
           {/* Desktop Navigation Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Menu setActive={handleMenuChange}>
-              {/* Services Dropdown */}
-              <MenuItem setActive={handleMenuChange} active={active} item="Services">
-                <div className="flex flex-col lg:flex-row p-6 min-w-[300px] lg:min-w-[800px]">
-                  {/* Main Categories */}
-                  <div className="flex flex-row lg:flex-col space-x-4 lg:space-x-0 lg:space-y-4 lg:pr-8 lg:border-r lg:border-gray-200 lg:dark:border-gray-700 mb-4 lg:mb-0">
-                    {navbarData.services.map((category, categoryIndex) => (
-                      <div key={categoryIndex} className="relative">
-                        <button
-                          onMouseEnter={() => setHoveredServicesCategory(category.title)}
-                          className={`font-semibold text-sm uppercase tracking-wider cursor-pointer transition-all duration-200 ease-in-out ${
-                            currentServicesCategory === category.title
-                              ? "text-blue-600 dark:text-blue-400 font-bold"
-                              : "text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400"
-                          }`}
-                        >
-                          {category.title}
-                        </button>
-                      </div>
-                    ))}
-                  </div>
+          <div className="hidden md:flex items-center space-x-8" onMouseLeave={() => handleMenuChange(null)}>
+            {/* Services Dropdown */}
+            <MenuItem setActive={handleMenuChange} active={active} item="Services">
+              <div className="flex flex-col lg:flex-row p-6 min-w-[300px] lg:min-w-[800px]">
+                {/* Main Categories */}
+                <div className="flex flex-row lg:flex-col space-x-4 lg:space-x-0 lg:space-y-4 lg:pr-8 lg:border-r lg:border-gray-200 lg:dark:border-gray-700 mb-4 lg:mb-0">
+                  {navbarData.services.map((category, categoryIndex) => (
+                    <div key={categoryIndex} className="relative">
+                      <button
+                        onMouseEnter={() => setHoveredServicesCategory(category.title)}
+                        className={`font-semibold text-sm uppercase tracking-wider cursor-pointer transition-all duration-200 ease-in-out ${
+                          currentServicesCategory === category.title
+                            ? "text-blue-600 dark:text-blue-400 font-bold"
+                            : "text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400"
+                        }`}
+                      >
+                        {category.title}
+                      </button>
+                    </div>
+                  ))}
+                </div>
 
-                  {/* Sub-items Card - Always visible with default or hovered content */}
-                  <div className="lg:flex-1 lg:pl-8">
-                    <div className="space-y-4">
-                      <h5 className="font-semibold text-gray-900 dark:text-white text-sm uppercase tracking-wider mb-4 transition-all duration-200">
-                        {currentServicesCategory}
-                      </h5>
-                      <div className="flex flex-col space-y-2">
-                        {navbarData.services
-                          .find(cat => cat.title === currentServicesCategory)
-                          ?.items.map((item, itemIndex) => (
-                            <HoveredLink key={itemIndex} href={item.href}>
-                              {item.title}
-                            </HoveredLink>
-                          ))}
-                      </div>
+                {/* Sub-items Card - Always visible with default or hovered content */}
+                <div className="lg:flex-1 lg:pl-8">
+                  <div className="space-y-4">
+                    <h5 className="font-semibold text-gray-900 dark:text-white text-sm uppercase tracking-wider mb-4 transition-all duration-200">
+                      {currentServicesCategory}
+                    </h5>
+                    <div className="flex flex-col space-y-2">
+                      {navbarData.services
+                        .find(cat => cat.title === currentServicesCategory)
+                        ?.items.map((item, itemIndex) => (
+                          <HoveredLink key={itemIndex} href={item.href}>
+                            {item.title}
+                          </HoveredLink>
+                        ))}
                     </div>
                   </div>
                 </div>
-              </MenuItem>
-
-              {/* Research & Patents Dropdown */}
-              <MenuItem setActive={handleMenuChange} active={active} item="Research">
-                <div className="flex flex-col lg:flex-row p-6 min-w-[300px] lg:min-w-[700px]">
-                  {/* Main Categories */}
-                  <div className="flex flex-row lg:flex-col space-x-4 lg:space-x-0 lg:space-y-4 lg:pr-8 lg:border-r lg:border-gray-200 lg:dark:border-gray-700 mb-4 lg:mb-0">
-                    {navbarData.researchAndPatents.map((category, categoryIndex) => (
-                      <div key={categoryIndex} className="relative">
-                        <button
-                          onMouseEnter={() => setHoveredResearchCategory(category.title)}
-                          className={`font-semibold text-sm uppercase tracking-wider cursor-pointer transition-all duration-200 ease-in-out ${
-                            currentResearchCategory === category.title
-                              ? "text-blue-600 dark:text-blue-400 font-bold"
-                              : "text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400"
-                          }`}
-                        >
-                          {category.title}
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Sub-items Card - Always visible with default or hovered content */}
-                  <div className="lg:flex-1 lg:pl-8">
-                    <div className="space-y-3">
-                      <h5 className="font-semibold text-gray-900 dark:text-white text-sm uppercase tracking-wider mb-4 transition-all duration-200">
-                        {currentResearchCategory}
-                      </h5>
-                      <div className="flex flex-col space-y-2">
-                        {navbarData.researchAndPatents
-                          .find(cat => cat.title === currentResearchCategory)
-                          ?.items.map((item, itemIndex) => (
-                            <HoveredLink key={itemIndex} href={item.href}>
-                              {item.title}
-                            </HoveredLink>
-                          ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </MenuItem>
-
-              {/* Simple Navigation Items */}
-              <div className="flex items-center space-x-8">
-                <a href="/about" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
-                  About
-                </a>
-                <a href="/blogs" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
-                  Blogs
-                </a>
-                <a href="/careers" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
-                  Careers
-                </a>
               </div>
-            </Menu>
+            </MenuItem>
+
+            {/* Research & Patents Dropdown */}
+            <MenuItem setActive={handleMenuChange} active={active} item="Research">
+              <div className="flex flex-col lg:flex-row p-6 min-w-[300px] lg:min-w-[700px]">
+                {/* Main Categories */}
+                <div className="flex flex-row lg:flex-col space-x-4 lg:space-x-0 lg:space-y-4 lg:pr-8 lg:border-r lg:border-gray-200 lg:dark:border-gray-700 mb-4 lg:mb-0">
+                  {navbarData.researchAndPatents.map((category, categoryIndex) => (
+                    <div key={categoryIndex} className="relative">
+                      <button
+                        onMouseEnter={() => setHoveredResearchCategory(category.title)}
+                        className={`font-semibold text-sm uppercase tracking-wider cursor-pointer transition-all duration-200 ease-in-out ${
+                          currentResearchCategory === category.title
+                            ? "text-blue-600 dark:text-blue-400 font-bold"
+                            : "text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400"
+                        }`}
+                      >
+                        {category.title}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Sub-items Card - Always visible with default or hovered content */}
+                <div className="lg:flex-1 lg:pl-8">
+                  <div className="space-y-3">
+                    <h5 className="font-semibold text-gray-900 dark:text-white text-sm uppercase tracking-wider mb-4 transition-all duration-200">
+                      {currentResearchCategory}
+                    </h5>
+                    <div className="flex flex-col space-y-2">
+                      {navbarData.researchAndPatents
+                        .find(cat => cat.title === currentResearchCategory)
+                        ?.items.map((item, itemIndex) => (
+                          <HoveredLink key={itemIndex} href={item.href}>
+                            {item.title}
+                          </HoveredLink>
+                        ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </MenuItem>
+
+            {/* Simple Navigation Items */}
+            <a href="/about" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
+              About
+            </a>
+            <a href="/blogs" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
+              Blogs
+            </a>
+            <a href="/careers" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
+              Careers
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -206,7 +202,7 @@ export const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 mt-2 bg-white/95 dark:bg-black/95 backdrop-blur-md rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg max-h-[80vh] overflow-y-auto">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-black/95 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50 shadow-lg max-h-[80vh] overflow-y-auto">
             <div className="px-4 py-4 space-y-4">
               {/* Services Mobile Menu */}
               <div className="space-y-4">

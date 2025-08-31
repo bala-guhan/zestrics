@@ -2,6 +2,7 @@
 import { Shield, AlertTriangle, Lock } from "lucide-react";
 import RevenueCard from "../revenue-card";
 import SineSteps from "../strategic-planning-card";
+import OperationalEfficiencyCard from "../operational-efficiency-card";
 
 export const NormalCardsSection = () => {
   const features = [
@@ -14,12 +15,14 @@ export const NormalCardsSection = () => {
     {
       title: "Operational Efficiency",
       description: "Identifies bottlenecks and inefficiencies, reducing costs and saving time.",
-      image: "/operations.jpeg"
+      image: "/noisy-bg-teal.jpg",
+      showOperationalEfficiencyBackground: true
     },
     {
       title: "Customer Understanding",
       description: "Analyzes user habits to optimize personalization",
-      image: "/photo9.jpg"
+      image: "/bg-noisy-slate.jpg",
+      isCustomerUnderstanding: true
     },
     {
       title: "Revenue Growth",
@@ -79,6 +82,17 @@ export const NormalCardsSection = () => {
                    </div>
                  </div>
                )}
+               
+                               {/* Operational Efficiency Background */}
+                {feature.showOperationalEfficiencyBackground && (
+                  <div className="absolute inset-0 z-0 flex justify-center items-end opacity-100 px-4 pb-4">
+                    <div className="w-full h-full flex items-end justify-center">
+                      <OperationalEfficiencyCard />
+                    </div>
+                  </div>
+                )}
+               
+                               {/* Customer Understanding Background - No additional images needed since they're now in the content */}
               
                              <div className="relative z-10 p-6 h-64 flex flex-col">
                  {feature.isRiskManagement ? (
@@ -129,16 +143,41 @@ export const NormalCardsSection = () => {
                        </div>
                      </div>
                    </div>
-                 ) : (
-                   <div className="flex flex-col h-full">
-                     <h3 className="text-xl font-semibold text-black leading-tight mb-3">
-                       {feature.title}
-                     </h3>
-                     <p className="text-white leading-relaxed flex-grow text-sm">
-                       {feature.description}
-                     </p>
-                   </div>
-                 )}
+                                   ) : feature.isCustomerUnderstanding ? (
+                    <div className="flex flex-col h-full">
+                      <h3 className="text-xl font-semibold text-black leading-tight mb-3">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-700 leading-relaxed mb-4 flex-grow text-sm">
+                        {feature.description}
+                      </p>
+                      <div className="flex flex-row justify-between px-2">
+                        <div className="flex flex-col items-center">
+                          <img src="/understand.png" alt="Understand" className="w-6 h-6 flex-shrink-0" />
+                          <span className="text-xs text-gray-700 mt-1 text-center">Understanding</span>
+                        </div>
+                        <div className="flex flex-col items-center">
+                          <img src="/experience.png" alt="Experience" className="w-6 h-6 flex-shrink-0" />
+                          <span className="text-xs text-gray-700 mt-1 text-center">Experience</span>
+                        </div>
+                        <div className="flex flex-col items-center">
+                          <svg className="w-6 h-6 flex-shrink-0 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                          </svg>
+                          <span className="text-xs text-gray-700 mt-1 text-center">Insights</span>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col h-full">
+                      <h3 className="text-xl font-semibold text-black leading-tight mb-3">
+                        {feature.title}
+                      </h3>
+                      <p className="text-white leading-relaxed flex-grow text-sm">
+                        {feature.description}
+                      </p>
+                    </div>
+                  )}
                </div>
             </div>
           ))}
