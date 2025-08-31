@@ -27,13 +27,13 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-3 text-gray-400">
-              <li><a href="/business-intelligence" className="hover:text-white transition-colors">Business Intelligence</a></li>
-              <li><a href="/data-engineering" className="hover:text-white transition-colors">Data Engineering</a></li>
-              <li><a href="/ai-consulting" className="hover:text-white transition-colors">AI Consulting</a></li>
-              <li><a href="/machine-learning" className="hover:text-white transition-colors">Machine Learning</a></li>
-              <li><a href="/data-science" className="hover:text-white transition-colors">Data Science</a></li>
-              <li><a href="/generative-ai" className="hover:text-white transition-colors">Generative AI</a></li>
-              <li><a href="/full-stack-development" className="hover:text-white transition-colors">Full Stack Development</a></li>
+              <li><a href="/services#business-intelligence" className="hover:text-white transition-colors">Business Intelligence</a></li>
+              <li><a href="/services#data-engineering" className="hover:text-white transition-colors">Data Engineering</a></li>
+              <li><a href="/services#ai-consulting" className="hover:text-white transition-colors">AI Consulting</a></li>
+              <li><a href="/services#machine-learning" className="hover:text-white transition-colors">Machine Learning</a></li>
+              <li><a href="/services#data-science" className="hover:text-white transition-colors">Data Science</a></li>
+              <li><a href="/services#generative-ai" className="hover:text-white transition-colors">Generative AI</a></li>
+              <li><a href="/services#full-stack-development" className="hover:text-white transition-colors">Full Stack Development</a></li>
             </ul>
           </div>
 
@@ -41,8 +41,8 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Resources</h4>
             <ul className="space-y-3 text-gray-400">
-              <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="/case-studies" className="hover:text-white transition-colors">Case Studies</a></li>
+              <li><a href="/blogs" className="hover:text-white transition-colors">Blogs</a></li>
+              <li><a href="/research-patents" className="hover:text-white transition-colors">Research & Patents</a></li>
             </ul>
           </div>
 
@@ -52,7 +52,7 @@ export const Footer = () => {
             <ul className="space-y-3 text-gray-400">
               <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
               <li><a href="/careers" className="hover:text-white transition-colors">Careers</a></li>
-              <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="/#footer" className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
         </div>

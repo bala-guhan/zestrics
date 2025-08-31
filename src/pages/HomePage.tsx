@@ -1,7 +1,5 @@
 import { TextAnimate } from "../components/magicui/text-animate";
-import { InteractiveHoverButton } from "../components/magicui/interactive-hover-button";
-import { ShimmerButton } from "../components/magicui/shimmer-button";
-import { GridSmallBackgroundDemo } from "../components/ui/gridsmallbackground";
+import ParticleRingHero from "../components/hero-3d";
 import { ExperienceTicker } from "../components/ticker";
 import { AuroraText } from "../components/magicui/aurora-text";
 import { CanvasRevealEffectDemo } from "../components/ui/canvas-reveal-demo";
@@ -10,31 +8,13 @@ import { WobbleCardsSection } from "../components/ui/wobble-cards-section";
 import { VisionMissionCards } from "../components/ui/vision-mission-cards";
 import { TeamSection } from "../components/ui/team-section";
 
-
 export const HomePage = () => {
   return (
     <div className="min-h-screen bg-gray-100 relative">
-      <GridSmallBackgroundDemo className="min-h-screen">
-        <h1 className="px-3 md:px-0 text-5xl text-center md:text-6xl font-bold text-black-600 mb-2">
-          Turn your Data into Business Value
-        </h1>
-        
-        <TextAnimate className="text-center text-gray-500">
-          Turning Data into Business Value. Join hands with the experts at Tech.
-        </TextAnimate>
-        <TextAnimate className="text-gray-500 mb-6">
-          Create whatever you think of with care and precision.
-        </TextAnimate>
-        <div className="flex flex-row space-x-3">
-            <InteractiveHoverButton>Learn more</InteractiveHoverButton>
-            <ShimmerButton>
-              Reach out
-            </ShimmerButton>
-        </div>
-      </GridSmallBackgroundDemo>
+      <ParticleRingHero />
       
       {/* Experience Ticker Section - Overlapping with hero */}
-      <div className="relative z-20 -mt-10 pb-10 bg-white">
+      <div className="relative z-20 pb-10 bg-white">
         <ExperienceTicker 
           yearsOfExperience={13}
           projectsCount={200}

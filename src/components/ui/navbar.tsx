@@ -1,10 +1,49 @@
 "use client";
 import { useState } from "react";
-import { Menu, MenuItem, ProductItem, HoveredLink } from "./navbar-menu";
+import { Menu, MenuItem, HoveredLink } from "./navbar-menu";
+import { navbarData } from "../../data/navbar-data";
 
 export const Navbar = () => {
   const [active, setActive] = useState<string | null>(null);
+  const [hoveredServicesCategory, setHoveredServicesCategory] = useState<string | null>(null);
+  const [hoveredResearchCategory, setHoveredResearchCategory] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileResearchOpen, setMobileResearchOpen] = useState(false);
+  const [mobileServicesCategoryOpen, setMobileServicesCategoryOpen] = useState<string | null>(null);
+  const [mobileResearchCategoryOpen, setMobileResearchCategoryOpen] = useState<string | null>(null);
+
+  // Set default categories for desktop view
+  const defaultServicesCategory = navbarData.services[0]?.title || null;
+  const defaultResearchCategory = navbarData.researchAndPatents[0]?.title || null;
+
+  const handleMenuChange = (menuItem: string | null) => {
+    setActive(menuItem);
+    // Reset category selections when switching between menus
+    if (menuItem !== "Services") {
+      setHoveredServicesCategory(null);
+    }
+    if (menuItem !== "Research") {
+      setHoveredResearchCategory(null);
+    }
+  };
+
+  // Get the currently displayed category for each dropdown
+  const currentServicesCategory = hoveredServicesCategory || defaultServicesCategory;
+  const currentResearchCategory = hoveredResearchCategory || defaultResearchCategory;
+
+  // Handle mobile category clicks
+  const handleMobileServicesCategoryClick = (categoryTitle: string) => {
+    setMobileServicesCategoryOpen(
+      mobileServicesCategoryOpen === categoryTitle ? null : categoryTitle
+    );
+  };
+
+  const handleMobileResearchCategoryClick = (categoryTitle: string) => {
+    setMobileResearchCategoryOpen(
+      mobileResearchCategoryOpen === categoryTitle ? null : categoryTitle
+    );
+  };
 
   return (
     <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
@@ -19,72 +58,101 @@ export const Navbar = () => {
 
           {/* Desktop Navigation Menu */}
           <div className="hidden md:flex items-center space-x-6">
-            <Menu setActive={setActive}>
-              <MenuItem setActive={setActive} active={active} item="Services">
-                <div className="text-sm grid grid-cols-2 gap-10 p-4">
-                  <ProductItem
-                    title="Business Intelligence"
-                    description="Powerful BI tools for data-driven decisions"
-                    href="/services#business-intelligence"
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=140&h=70&fit=crop"
-                  />
-                  <ProductItem
-                    title="Data Engineering"
-                    description="Build robust, scalable data pipelines"
-                    href="/services#data-engineering"
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=140&h=70&fit=crop"
-                  />
-                  <ProductItem
-                    title="AI Consulting"
-                    description="Expert guidance for AI implementation"
-                    href="/services#ai-chatbot-development"
-                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=140&h=70&fit=crop"
-                  />
-                  <ProductItem
-                    title="Machine Learning"
-                    description="AI-powered predictive analytics"
-                    href="/services#machine-learning"
-                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=140&h=70&fit=crop"
-                  />
-                  <ProductItem
-                    title="Data Science"
-                    description="Advanced analytics and insights"
-                    href="/services#data-science"
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=140&h=70&fit=crop"
-                  />
-                  <ProductItem
-                    title="Generative AI"
-                    description="Cutting-edge AI content generation"
-                    href="/services#generative-ai"
-                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=140&h=70&fit=crop"
-                  />
-                  <ProductItem
-                    title="Full Stack Development"
-                    description="Complete web and mobile solutions"
-                    href="/services#full-stack-development"
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=140&h=70&fit=crop"
-                  />
-                  <ProductItem
-                    title="View All Services"
-                    description="Explore our complete service portfolio"
-                    href="/services"
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=140&h=70&fit=crop"
-                  />
+            <Menu setActive={handleMenuChange}>
+              {/* Services Dropdown */}
+              <MenuItem setActive={handleMenuChange} active={active} item="Services">
+                <div className="flex flex-col lg:flex-row p-6 min-w-[300px] lg:min-w-[800px]">
+                  {/* Main Categories */}
+                  <div className="flex flex-row lg:flex-col space-x-4 lg:space-x-0 lg:space-y-4 lg:pr-8 lg:border-r lg:border-gray-200 lg:dark:border-gray-700 mb-4 lg:mb-0">
+                    {navbarData.services.map((category, categoryIndex) => (
+                      <div key={categoryIndex} className="relative">
+                        <button
+                          onMouseEnter={() => setHoveredServicesCategory(category.title)}
+                          className={`font-semibold text-sm uppercase tracking-wider cursor-pointer transition-all duration-200 ease-in-out ${
+                            currentServicesCategory === category.title
+                              ? "text-blue-600 dark:text-blue-400 font-bold"
+                              : "text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400"
+                          }`}
+                        >
+                          {category.title}
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Sub-items Card - Always visible with default or hovered content */}
+                  <div className="lg:flex-1 lg:pl-8">
+                    <div className="space-y-3">
+                      <h5 className="font-semibold text-gray-900 dark:text-white text-sm uppercase tracking-wider mb-4 transition-all duration-200">
+                        {currentServicesCategory}
+                      </h5>
+                      <div className="flex flex-col space-y-2">
+                        {navbarData.services
+                          .find(cat => cat.title === currentServicesCategory)
+                          ?.items.map((item, itemIndex) => (
+                            <HoveredLink key={itemIndex} href={item.href}>
+                              {item.title}
+                            </HoveredLink>
+                          ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </MenuItem>
-              <MenuItem setActive={setActive} active={active} item="Resources">
-                <div className="flex flex-col space-y-4 text-sm">
-                  <HoveredLink href="/blog">Blog</HoveredLink>
-                  <HoveredLink href="/case-studies">Case Studies</HoveredLink>
+
+              {/* Research & Patents Dropdown */}
+              <MenuItem setActive={handleMenuChange} active={active} item="Research">
+                <div className="flex flex-col lg:flex-row p-6 min-w-[300px] lg:min-w-[700px]">
+                  {/* Main Categories */}
+                  <div className="flex flex-row lg:flex-col space-x-4 lg:space-x-0 lg:space-y-4 lg:pr-8 lg:border-r lg:border-gray-200 lg:dark:border-gray-700 mb-4 lg:mb-0">
+                    {navbarData.researchAndPatents.map((category, categoryIndex) => (
+                      <div key={categoryIndex} className="relative">
+                        <button
+                          onMouseEnter={() => setHoveredResearchCategory(category.title)}
+                          className={`font-semibold text-sm uppercase tracking-wider cursor-pointer transition-all duration-200 ease-in-out ${
+                            currentResearchCategory === category.title
+                              ? "text-blue-600 dark:text-blue-400 font-bold"
+                              : "text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400"
+                          }`}
+                        >
+                          {category.title}
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Sub-items Card - Always visible with default or hovered content */}
+                  <div className="lg:flex-1 lg:pl-8">
+                    <div className="space-y-3">
+                      <h5 className="font-semibold text-gray-900 dark:text-white text-sm uppercase tracking-wider mb-4 transition-all duration-200">
+                        {currentResearchCategory}
+                      </h5>
+                      <div className="flex flex-col space-y-2">
+                        {navbarData.researchAndPatents
+                          .find(cat => cat.title === currentResearchCategory)
+                          ?.items.map((item, itemIndex) => (
+                            <HoveredLink key={itemIndex} href={item.href}>
+                              {item.title}
+                            </HoveredLink>
+                          ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </MenuItem>
-                             <MenuItem setActive={setActive} active={active} item="Company">
-                 <div className="flex flex-col space-y-4 text-sm">
-                   <HoveredLink href="/#about-section">About Us</HoveredLink>
-                   <HoveredLink href="/careers">Careers</HoveredLink>
-                   <HoveredLink href="/#footer">Contact</HoveredLink>
-                 </div>
-               </MenuItem>
+
+              {/* Simple Navigation Items */}
+              <div className="flex items-center space-x-6">
+                <a href="/about" className="text-black hover:opacity-[0.9] dark:text-white transition-opacity">
+                  About
+                </a>
+                <a href="/blogs" className="text-black hover:opacity-[0.9] dark:text-white transition-opacity">
+                  Blogs
+                </a>
+                <a href="/careers" className="text-black hover:opacity-[0.9] dark:text-white transition-opacity">
+                  Careers
+                </a>
+              </div>
             </Menu>
           </div>
 
@@ -121,89 +189,222 @@ export const Navbar = () => {
             </button>
           </div>
 
-          {/* Desktop Get Started Button */}
+          {/* Desktop Contact Us Button */}
           <div className="hidden md:block ml-8">
-            <button className="bg-black dark:bg-white text-white dark:text-black px-6 py-2 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-sm font-medium">
-              Get Started
-            </button>
+            <a
+              href="/#footer"
+              className="bg-black dark:bg-white text-white dark:text-black px-6 py-2 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-sm font-medium"
+            >
+              Contact Us
+            </a>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 mt-2 bg-white/95 dark:bg-black/95 backdrop-blur-md rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg">
+          <div className="md:hidden absolute top-full left-0 right-0 mt-2 bg-white/95 dark:bg-black/95 backdrop-blur-md rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg max-h-[80vh] overflow-y-auto">
             <div className="px-4 py-4 space-y-4">
+              {/* Services Mobile Menu */}
               <div className="space-y-4">
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
-                    Services
-                  </h3>
-                  <div className="space-y-2">
-                    <a href="/services#business-intelligence" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Business Intelligence
-                    </a>
-                    <a href="/services#data-engineering" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Data Engineering
-                    </a>
-                    <a href="/services#ai-chatbot-development" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      AI Consulting
-                    </a>
-                    <a href="/services#machine-learning" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Machine Learning
-                    </a>
-                    <a href="/services#data-science" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Data Science
-                    </a>
-                    <a href="/services#generative-ai" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Generative AI
-                    </a>
-                    <a href="/services#full-stack-development" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Full Stack Development
-                    </a>
-                    <a href="/services" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 font-semibold">
-                      View All Services →
-                    </a>
-                  </div>
+                  <button
+                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    className="flex items-center justify-between w-full text-left"
+                  >
+                    <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Services
+                    </h3>
+                    <svg
+                      className={`w-4 h-4 text-gray-500 dark:text-gray-400 transition-transform duration-200 ease-in-out ${
+                        mobileServicesOpen ? "rotate-90" : ""
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
+                  
+                  {mobileServicesOpen && (
+                    <div className="mt-3 space-y-3 animate-in fade-in duration-200">
+                      {navbarData.services.map((category, categoryIndex) => (
+                        <div key={categoryIndex} className="ml-4">
+                          <button
+                            onClick={() => handleMobileServicesCategoryClick(category.title)}
+                            className="flex items-center justify-between w-full text-left mb-2"
+                          >
+                            <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                              {category.title}
+                            </h4>
+                            <svg
+                              className={`w-3 h-3 text-gray-400 transition-transform duration-200 ease-in-out ${
+                                mobileServicesCategoryOpen === category.title ? "rotate-90" : ""
+                              }`}
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
+                          </button>
+                          
+                          {mobileServicesCategoryOpen === category.title && (
+                            <div className="ml-4 space-y-1 animate-in fade-in duration-200">
+                              {category.items.map((item, itemIndex) => (
+                                <a
+                                  key={itemIndex}
+                                  href={item.href}
+                                  className="flex items-center text-sm text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-150"
+                                >
+                                  <svg
+                                    className="w-3 h-3 mr-2 text-gray-400"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
+                                  {item.title}
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                
 
+                {/* Research & Patents Mobile Menu */}
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
-                    Resources
-                  </h3>
-                  <div className="space-y-2">
-                    <a href="/blog" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Blog
-                    </a>
-                    <a href="/case-studies" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Case Studies
-                    </a>
-                  </div>
+                  <button
+                    onClick={() => setMobileResearchOpen(!mobileResearchOpen)}
+                    className="flex items-center justify-between w-full text-left"
+                  >
+                    <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Research & Patents
+                    </h3>
+                    <svg
+                      className={`w-4 h-4 text-gray-500 dark:text-gray-400 transition-transform duration-200 ease-in-out ${
+                        mobileResearchOpen ? "rotate-90" : ""
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
+                  
+                  {mobileResearchOpen && (
+                    <div className="mt-3 space-y-3 animate-in fade-in duration-200">
+                      {navbarData.researchAndPatents.map((category, categoryIndex) => (
+                        <div key={categoryIndex} className="ml-4">
+                          <button
+                            onClick={() => handleMobileResearchCategoryClick(category.title)}
+                            className="flex items-center justify-between w-full text-left mb-2"
+                          >
+                            <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                              {category.title}
+                            </h4>
+                            <svg
+                              className={`w-3 h-3 text-gray-400 transition-transform duration-200 ease-in-out ${
+                                mobileResearchCategoryOpen === category.title ? "rotate-90" : ""
+                              }`}
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
+                          </button>
+                          
+                          {mobileResearchCategoryOpen === category.title && (
+                            <div className="ml-4 space-y-1 animate-in fade-in duration-200">
+                              {category.items.map((item, itemIndex) => (
+                                <a
+                                  key={itemIndex}
+                                  href={item.href}
+                                  className="flex items-center text-sm text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-150"
+                                >
+                                  <svg
+                                    className="w-3 h-3 mr-2 text-gray-400"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
+                                  {item.title}
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
-                    Company
-                  </h3>
-                                     <div className="space-y-2">
-                     <a href="/#about-section" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                       About Us
-                     </a>
-                    <a href="/careers" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Careers
-                    </a>
-                    <a href="/#footer" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300">
-                      Contact
-                    </a>  
-                  </div>
+                {/* Other Navigation Items */}
+                <div className="space-y-2">
+                  <a href="/about" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-150">
+                    About
+                  </a>
+                  <a href="/blogs" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-150">
+                    Blogs
+                  </a>
+                  <a href="/careers" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-150">
+                    Careers
+                  </a>
                 </div>
               </div>
 
-              {/* Mobile Get Started Button */}
+              {/* Mobile Contact Us Button */}
               <div className="pt-4 border-t border-gray-200/50 dark:border-gray-700/50">
-                <button className="w-full bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-sm font-medium">
-                  Get Started
-                </button>
+                <a
+                  href="/#footer"
+                  className="w-full bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-sm font-medium block text-center"
+                >
+                  Contact Us
+                </a>
               </div>
             </div>
           </div>
