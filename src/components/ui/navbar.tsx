@@ -13,6 +13,19 @@ export const Navbar = () => {
   const [mobileServicesCategoryOpen, setMobileServicesCategoryOpen] = useState<string | null>(null);
   const [mobileResearchCategoryOpen, setMobileResearchCategoryOpen] = useState<string | null>(null);
 
+  const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    // Close mobile menu if open
+    setIsMobileMenuOpen(false);
+  };
+
   // Set default categories for desktop view
   const defaultServicesCategory = navbarData.services[0]?.title || null;
   const defaultResearchCategory = navbarData.researchAndPatents[0]?.title || null;
@@ -192,8 +205,9 @@ export const Navbar = () => {
           {/* Desktop Contact Us Button */}
           <div className="hidden md:block">
             <a
-              href="/#contact"
-              className="bg-black dark:bg-white text-white dark:text-black px-8 py-3 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-sm font-medium"
+              href="#contact"
+              onClick={scrollToContact}
+              className="bg-black dark:bg-white text-white dark:text-black px-8 py-3 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-sm font-medium cursor-pointer"
             >
               Contact Us
             </a>
@@ -400,8 +414,9 @@ export const Navbar = () => {
               {/* Mobile Contact Us Button */}
               <div className="pt-4 border-t border-gray-200/50 dark:border-gray-700/50">
                 <a
-                  href="/#contact"
-                  className="w-full bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-sm font-medium block text-center"
+                  href="#contact"
+                  onClick={scrollToContact}
+                  className="w-full bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-sm font-medium block text-center cursor-pointer"
                 >
                   Contact Us
                 </a>

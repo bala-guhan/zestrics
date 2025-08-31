@@ -59,7 +59,19 @@ const StatCard = ({ title, number, subtitle, details, actionText, actionLink, de
         {actionText && actionLink && (
           <a
             href={actionLink}
-            className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium text-sm transition-colors duration-200"
+            onClick={(e) => {
+              if (actionLink === "/#contact" || actionLink === "#contact") {
+                e.preventDefault();
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }
+              }
+            }}
+            className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium text-sm transition-colors duration-200 cursor-pointer"
           >
             {actionText} <ArrowRight className="w-4 h-4 ml-1" />
           </a>
@@ -124,7 +136,7 @@ export const StatsSection = () => {
         "Lithuania"
       ],
       actionText: "Contact Us",
-      actionLink: "/#contact",
+      actionLink: "#contact",
       icon: <MapPin className="w-6 h-6" />
     }
   ];

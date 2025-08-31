@@ -130,8 +130,18 @@ export const FAQSection = () => {
             Still have questions? We're here to help!
           </p>
           <a
-            href="/#contact"
-            className="inline-flex items-center px-8 py-1 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors duration-200"
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }}
+            className="inline-flex items-center px-8 py-1 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors duration-200 cursor-pointer"
           >
             Contact Us
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
