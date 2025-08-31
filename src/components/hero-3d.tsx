@@ -140,7 +140,7 @@ const ParticleRingHero: React.FC = () => {
           minDistance={10} 
           enablePan={false}
           enableZoom={false}
-          enableRotate={true}
+          enableRotate={false}
         />
         <directionalLight />
         <pointLight position={[-30, 0, -30]} power={10.0} />
@@ -150,11 +150,11 @@ const ParticleRingHero: React.FC = () => {
       {/* Hero Content Overlay */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-100 leading-tight">
-            Turn your <AuroraText>Data</AuroraText> into <AuroraText>Business</AuroraText> Value
+          <h1 className="text-4xl mb-2 md:text-6xl lg:text-7xl font-bold text-slate-100 leading-tight">
+            Turn your <AuroraText colors={['#1e3a8a', '#3b82f6', '#fb923c', '#ea580c']}>Data</AuroraText> into <AuroraText colors={['#1e3a8a', '#3b82f6', '#fb923c', '#ea580c']}>Business</AuroraText> Value
           </h1>
           <TextAnimate 
-            className="text-white max-w-5xl mx-auto leading-relaxed"
+            className="text-white max-w-5xl mb-2 mx-auto leading-relaxed"
             by="word"
             animation="fadeIn"
             delay={0.5}
@@ -162,8 +162,19 @@ const ParticleRingHero: React.FC = () => {
             Turning Data into Business Value. Join hands with the experts at Tech. Create whatever you think of with care and precision. Join hands with the experts at Tech. Create whatever you think of with care and precision.
           </TextAnimate>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pointer-events-auto">
-            <InteractiveHoverButton className="text-black">Learn more</InteractiveHoverButton>
-            <ShimmerButton>
+            <InteractiveHoverButton 
+              className="text-black"
+              onClick={() => {
+                window.location.href = "/services";
+              }}
+            >
+              Explore Services
+            </InteractiveHoverButton>
+            <ShimmerButton
+              onClick={() => {
+                window.location.href = "/#contact";
+              }}
+            >
               Reach out
             </ShimmerButton>
           </div>

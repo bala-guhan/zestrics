@@ -133,29 +133,35 @@ export const SubServiceCard = ({ service, isOpen, onClose }: SubServiceCardProps
             </p>
 
             {/* Overview */}
-            <div className="mb-8 relative z-10">
-              <h3 className="text-xl md:text-2xl font-semibold mb-4">Overview</h3>
-              <p className="leading-relaxed">{service.overview}</p>
-            </div>
+            {service.overview && (
+              <div className="mb-8 relative z-10">
+                <h3 className="text-xl md:text-2xl font-semibold mb-4">Overview</h3>
+                <p className="leading-relaxed">{service.overview}</p>
+              </div>
+            )}
 
             {/* Benefits */}
-            <div className="mb-8 relative z-10">
-              <h3 className="text-xl md:text-2xl font-semibold mb-4">What You Can Achieve</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {service.benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start">
-                    <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <p>{benefit}</p>
-                  </div>
-                ))}
+            {service.benefits && service.benefits.length > 0 && (
+              <div className="mb-8 relative z-10">
+                <h3 className="text-xl md:text-2xl font-semibold mb-4">What You Can Achieve</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {service.benefits.map((benefit, index) => (
+                    <div key={index} className="flex items-start">
+                      <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <p>{benefit}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Flowchart */}
-            <div className="relative z-10">
-              <h3 className="text-xl md:text-2xl font-semibold mb-4">Our Process</h3>
-              <Flowchart steps={service.flowchart} className="mt-6" />
-            </div>
+            {service.flowchart && service.flowchart.length > 0 && (
+              <div className="relative z-10">
+                <h3 className="text-xl md:text-2xl font-semibold mb-4">Our Process</h3>
+                <Flowchart steps={service.flowchart} className="mt-6" />
+              </div>
+            )}
           </motion.div>
         </motion.div>
       )}

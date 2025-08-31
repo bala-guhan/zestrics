@@ -193,39 +193,6 @@ export function BlogsPage() {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold text-white mb-6">
-              Stay Updated with Our Latest Insights
-            </h2>
-            <p className="text-xl text-blue-100 mb-8">
-              Subscribe to our newsletter for the latest trends in AI, data science, and technology
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                Subscribe
-              </button>
-            </div>
-            
-            <p className="text-sm text-blue-200 mt-4">
-              No spam, unsubscribe at any time
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Featured Posts Section */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">

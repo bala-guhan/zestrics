@@ -27,13 +27,10 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-3 text-gray-400">
-              <li><a href="/services#business-intelligence" className="hover:text-white transition-colors">Business Intelligence</a></li>
-              <li><a href="/services#data-engineering" className="hover:text-white transition-colors">Data Engineering</a></li>
-              <li><a href="/services#ai-consulting" className="hover:text-white transition-colors">AI Consulting</a></li>
-              <li><a href="/services#machine-learning" className="hover:text-white transition-colors">Machine Learning</a></li>
-              <li><a href="/services#data-science" className="hover:text-white transition-colors">Data Science</a></li>
-              <li><a href="/services#generative-ai" className="hover:text-white transition-colors">Generative AI</a></li>
-              <li><a href="/services#full-stack-development" className="hover:text-white transition-colors">Full Stack Development</a></li>
+              <li><a href="/services#big-data-cloud" className="hover:text-white transition-colors">Big Data & Cloud Frameworks</a></li>
+              <li><a href="/services#ai-ml" className="hover:text-white transition-colors">AI/ML</a></li>
+              <li><a href="/services#generative-ai-gpt" className="hover:text-white transition-colors">Generative AI & GPT</a></li>
+              <li><a href="/services#software-development" className="hover:text-white transition-colors">Software Development</a></li>
             </ul>
           </div>
 
@@ -52,7 +49,7 @@ export const Footer = () => {
             <ul className="space-y-3 text-gray-400">
               <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
               <li><a href="/careers" className="hover:text-white transition-colors">Careers</a></li>
-              <li><a href="/#footer" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="/#contact" className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
         </div>

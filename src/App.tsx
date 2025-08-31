@@ -9,6 +9,7 @@ import { NotFoundPage } from './pages/404-page';
 import { AboutPage } from './pages/about-page';
 import { BlogsPage } from './pages/blogs-page';
 import { ResearchPatentsPage } from './pages/research-patents-page';
+import { ResearchPage } from './pages/research-page';
 import { BigDataCloudServicesPage } from './pages/big-data-cloud-services';
 import { AIMLServicesPage } from './pages/ai-ml-services';
 import { GenerativeAIGPTServicesPage } from './pages/generative-ai-gpt-services';
@@ -90,7 +91,16 @@ export default function App() {
           <div className="min-h-screen bg-gray-100">
             <Navbar />
             <main>
-              <ResearchPatentsPage />
+              <ResearchPage />
+            </main>
+            <Footer />
+          </div>
+        } />
+        <Route path="/research" element={
+          <div className="min-h-screen bg-gray-100">
+            <Navbar />
+            <main>
+              <ResearchPage />
             </main>
             <Footer />
           </div>

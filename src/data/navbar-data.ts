@@ -59,27 +59,34 @@ export const navbarData: NavbarData = {
   ],
   researchAndPatents: [
     {
-      title: "IP Search",
+      title: "Patent Search & Analysis",
       items: [
-        { title: "Patent Invalidation Search", href: "/research-patents#patent-invalidation-search" },
-        { title: "Patent Infringement Search", href: "/research-patents#patent-infringement-search" },
-        { title: "Freedom to Operate Search", href: "/research-patents#freedom-to-operate-search" },
-        { title: "Patentability Search", href: "/research-patents#patentability-search" },
-        { title: "Design Patent Search", href: "/research-patents#design-patent-search" },
-        { title: "State of Art Search (SOA)", href: "/research-patents#state-of-art-search" },
-        { title: "Standard Essential Patents (SEPs)", href: "/research-patents#standard-essential-patents" }
+        { title: "IP Search", href: "/research#patent-search" },
+        { title: "Patent Invalidation Search", href: "/research#patent-search" },
+        { title: "Patent Infringement Search", href: "/research#patent-search" },
+        { title: "Freedom to Operate Search", href: "/research#patent-search" },
+        { title: "Patentability Search", href: "/research#patent-search" },
+        { title: "Design Patent Search", href: "/research#patent-search" },
+        { title: "State of Art Search (SOA)", href: "/research#patent-search" }
       ]
     },
     {
-      title: "Patent Portfolio Management",
+      title: "Portfolio Management",
       items: [
-        { title: "Patent Portfolio Analysis", href: "/research-patents#patent-portfolio-analysis" },
-        { title: "M&A – Patent Due Diligence", href: "/research-patents#ma-patent-due-diligence" },
-        { title: "Patent Ranking", href: "/research-patents#patent-ranking" },
-        { title: "Patent Commercialisation", href: "/research-patents#patent-commercialisation" },
-        { title: "Patent Drafting & Illustrations", href: "/research-patents#patent-drafting-illustrations" },
-        { title: "Patent Filing/ FER/ Grant Support", href: "/research-patents#patent-filing-fer-grant-support" },
-        { title: "Drafting & Prosecution Support", href: "/research-patents#drafting-prosecution-support" }
+        { title: "Patent Portfolio Management", href: "/research#portfolio-management" },
+        { title: "Patent Portfolio Analysis", href: "/research#portfolio-management" },
+        { title: "Patent Ranking", href: "/research#portfolio-management" },
+        { title: "Patent Commercialisation", href: "/research#portfolio-management" }
+      ]
+    },
+    {
+      title: "Patent Services",
+      items: [
+        { title: "Patent Drafting & Illustrations", href: "/research#patent-services" },
+        { title: "Patent Filing/ FER/ Grant Support", href: "/research#patent-services" },
+        { title: "Drafting & Prosecution Support", href: "/research#patent-services" },
+        { title: "M&A – Patent Due Diligence", href: "/research#patent-services" },
+        { title: "Standard Essential Patents (SEPs)", href: "/research#patent-services" }
       ]
     }
   ]

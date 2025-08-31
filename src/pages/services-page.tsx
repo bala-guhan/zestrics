@@ -6,6 +6,7 @@ import { ServiceCard } from "../components/ui/service-card";
 import { SubServiceCard } from "../components/ui/sub-service-card";
 import { servicesData, servicesTabsData, SubServiceData } from "../data/services-data";
 import { ShinyButton } from "../components/magicui/shiny-button";
+import { FAQSection } from "../components/ui/faq-section";
 
 export const ServicesPage = () => {
   const [selectedService, setSelectedService] = useState<number | null>(null);
@@ -34,7 +35,7 @@ export const ServicesPage = () => {
     value: serviceTab.value,
     backgroundImage: serviceTab.backgroundImage,
     content: (
-      <div className={`w-full overflow-hidden relative h-full rounded-2xl p-6 md:p-10 text-white flex flex-col shadow-lg`}>
+      <div className={`w-full overflow-hidden relative h-full rounded-2xl p-6 md:p-10 text-white flex flex-col shadow-lg`} style={{ background: serviceTab.gradient }}>
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/20 rounded-2xl"></div>
         <div className="relative z-10 flex flex-col h-full">
@@ -51,24 +52,21 @@ export const ServicesPage = () => {
               {serviceTab.subServices.map((subService, subIndex) => (
                 <div
                   key={subIndex}
-                  className="p-4 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-200 bg-cover bg-center bg-no-repeat relative"
-                  style={{
-                    backgroundImage: `url('/noisy-background.jpg')`,
+                  className="p-4 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-200 bg-white/10 backdrop-blur-sm border border-white/20"
+                  onClick={() => {
+                    window.location.href = subService.href;
                   }}
-                  onClick={() => setSelectedSubService(subService)}
                 >
-                  {/* Dark overlay for sub-service cards */}
-                  <div className="absolute inset-0 bg-black/30 rounded-lg"></div>
                   <div className="relative z-10">
                     <div className="flex items-center mb-2">
-                      {/* <span className="text-2xl mr-2">{subService.icon}</span> */}
+                      <span className="text-2xl mr-2">{subService.icon}</span>
                       <h3 className="text-lg font-semibold">{subService.title}</h3>
                     </div>
                     <p className="text-sm text-gray-200 line-clamp-3">
-                      {subService.description.substring(0, 120)}...
+                      {subService.description}
                     </p>
                     <button className="mt-3 px-3 py-1 bg-white/20 rounded-full text-xs hover:bg-white/30 transition-colors">
-                      Learn More
+                      Learn More →
                     </button>
                   </div>
                 </div>
@@ -118,8 +116,8 @@ export const ServicesPage = () => {
         />
       )}
 
-
-
+      {/* FAQ Section */}
+      <FAQSection />
 
       <div className="px-4 md:px-32 bg-white pt-32">
         <div className="max-w-4xl mx-auto text-center">
@@ -130,10 +128,20 @@ export const ServicesPage = () => {
             Let us help you build your dream project. Our experts in all the mentioned fields will take care of your product needs end to end. Reach out to us and we will talk about your project.
           </TextAnimate>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <ShinyButton className="bg-gray-700 text-white px-8 py-3 rounded-lg font-medium">
+            <ShinyButton 
+              className="bg-gray-700 text-white px-8 py-3 rounded-lg font-medium"
+              onClick={() => {
+                window.location.href = "/#contact";
+              }}
+            >
               Get Started
             </ShinyButton>
-            <ShinyButton className="bg-white border border-gray-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-50">
+            <ShinyButton 
+              className="bg-white border border-gray-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-50"
+              onClick={() => {
+                window.location.href = "/about";
+              }}
+            >
               Learn More
             </ShinyButton>
           </div>

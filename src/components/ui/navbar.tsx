@@ -48,16 +48,20 @@ export const Navbar = () => {
   return (
     <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
       <div className="bg-white/90 backdrop-blur-md rounded-full border border-gray-200/50 dark:bg-black/90 dark:border-gray-700/50 shadow-lg">
-        <div className="flex items-center px-6">
+        <div className="flex items-center justify-between px-8 min-w-[800px] lg:min-w-[1000px]">
           {/* Logo */}
-          <div className="flex-shrink-0 mr-8">
-            <a href="/" className="text-xl font-bold text-black dark:text-white">
-              Zestrics
+          <div className="flex-shrink-0">
+            <a href="/" className="flex items-center">
+              <img 
+                src="/Zestrics logo (1).PNG" 
+                alt="Zestrics" 
+                className="h-4 md:h-8 w-auto object-contain"
+              />
             </a>
           </div>
 
           {/* Desktop Navigation Menu */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-8">
             <Menu setActive={handleMenuChange}>
               {/* Services Dropdown */}
               <MenuItem setActive={handleMenuChange} active={active} item="Services">
@@ -82,7 +86,7 @@ export const Navbar = () => {
 
                   {/* Sub-items Card - Always visible with default or hovered content */}
                   <div className="lg:flex-1 lg:pl-8">
-                    <div className="space-y-3">
+                    <div className="space-y-4">
                       <h5 className="font-semibold text-gray-900 dark:text-white text-sm uppercase tracking-wider mb-4 transition-all duration-200">
                         {currentServicesCategory}
                       </h5>
@@ -142,14 +146,14 @@ export const Navbar = () => {
               </MenuItem>
 
               {/* Simple Navigation Items */}
-              <div className="flex items-center space-x-6">
-                <a href="/about" className="text-black hover:opacity-[0.9] dark:text-white transition-opacity">
+              <div className="flex items-center space-x-8">
+                <a href="/about" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
                   About
                 </a>
-                <a href="/blogs" className="text-black hover:opacity-[0.9] dark:text-white transition-opacity">
+                <a href="/blogs" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
                   Blogs
                 </a>
-                <a href="/careers" className="text-black hover:opacity-[0.9] dark:text-white transition-opacity">
+                <a href="/careers" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
                   Careers
                 </a>
               </div>
@@ -190,10 +194,10 @@ export const Navbar = () => {
           </div>
 
           {/* Desktop Contact Us Button */}
-          <div className="hidden md:block ml-8">
+          <div className="hidden md:block">
             <a
-              href="/#footer"
-              className="bg-black dark:bg-white text-white dark:text-black px-6 py-2 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-sm font-medium"
+              href="/#contact"
+              className="bg-black dark:bg-white text-white dark:text-black px-8 py-3 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-sm font-medium"
             >
               Contact Us
             </a>
@@ -400,7 +404,7 @@ export const Navbar = () => {
               {/* Mobile Contact Us Button */}
               <div className="pt-4 border-t border-gray-200/50 dark:border-gray-700/50">
                 <a
-                  href="/#footer"
+                  href="/#contact"
                   className="w-full bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-sm font-medium block text-center"
                 >
                   Contact Us
