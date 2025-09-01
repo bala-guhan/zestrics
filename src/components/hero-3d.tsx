@@ -158,7 +158,6 @@ const ParticleRingHero: React.FC = () => {
             animation="fadeIn"
             delay={0.5}
           >
-            Turning Data into Business Value. Join hands with the experts at Tech. Create whatever you think of with care and precision. Join hands with the experts at Tech. Create whatever you think of with care and precision.
             From vision to value, we help you create what you imagine ,partnering with Tech experts who bring care, precision, and innovation to every solution.
           </TextAnimate>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pointer-events-auto">
