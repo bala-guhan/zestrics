@@ -1,85 +1,67 @@
-"use client";
 import React from "react";
 
-type ServiceCard = {
+interface ServiceCard {
   id: string;
   title: string;
-  icon: string;
   image: string;
   href: string;
-};
+}
 
-const services: ServiceCard[] = [
+const serviceCards: ServiceCard[] = [
   {
-    id: "big-data-cloud-frameworks",
+    id: "big-data",
     title: "Big Data & Cloud Frameworks",
-    icon: "/server.png",
     image: "/big-dataa.jpeg",
     href: "/services#big-data-cloud-frameworks",
   },
   {
     id: "ai-ml",
-    title: "AI/ML",
-    icon: "/deep-learning.png",
+    title: "AI/ML", 
     image: "/ai-ml.jpeg",
     href: "/services#ai-ml",
   },
   {
-    id: "generative-ai-gpt",
+    id: "generative-ai",
     title: "Generative AI & GPT",
-    icon: "/robotics.png",
-    image: "/gen-ai.jpeg",
+    image: "/gen-ai.jpeg", 
     href: "/services#generative-ai-gpt",
   },
   {
-    id: "software-development",
+    id: "software-dev",
     title: "Software Development",
-    icon: "/coding.png",
     image: "/web-dev.jpeg",
     href: "/services#software-development",
   },
 ];
 
 export const ImageCardsSection: React.FC = () => {
-  const handleClick = (href: string) => {
-    window.location.href = href;
-  };
-
   return (
-    <section className="py-20 bg-white dark:bg-black w-full mx-auto px-8">
-      <div className="flex flex-col lg:flex-row items-stretch justify-center gap-4 w-full max-w-6xl mx-auto">
-        {services.map((s) => (
-          <button
-            key={s.id}
-            onClick={() => handleClick(s.href)}
-            className="relative group flex-1 max-w-xs w-full mx-auto h-[18rem] overflow-hidden rounded-xl border border-black/20 dark:border-white/20 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            aria-label={s.title}
-          >
-            {/* Background image */}
-            <img
-              src={s.image}
-              alt={s.title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
-              loading="lazy"
-            />
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-            {/* Content */}
-            <div className="relative z-10 h-full w-full flex flex-col items-center justify-center gap-3 text-white">
-              <img src={s.icon} alt="" className="h-12 w-12 object-contain drop-shadow" />
-              <h3 className="text-center font-bold text-lg px-4">
-                {s.title}
-              </h3>
-            </div>
-            {/* Hover ring */}
-            <div className="absolute inset-0 rounded-xl ring-0 ring-blue-500/0 transition-all duration-300 group-hover:ring-4 group-hover:ring-blue-500/30" />
-          </button>
-        ))}
+    <section className="py-20 bg-white dark:bg-black">
+      <div className="max-w-6xl mx-auto px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {serviceCards.map((card) => (
+            <a
+              key={card.id}
+              href={card.href}
+              className="group block relative h-80 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+            >
+              <img
+                src={card.image}
+                alt={card.title}
+                className="w-full h-full object-cover mt-10"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-white text-lg font-semibold leading-tight">
+                  {card.title}
+                </h3>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
 export default ImageCardsSection;
-
-
