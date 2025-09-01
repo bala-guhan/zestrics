@@ -12,7 +12,7 @@ interface ExperienceTickerProps {
 export function ExperienceTicker({ 
   yearsOfExperience = 13, 
   projectsCount = 200, 
-  customersCount = 1000,
+  customersCount = 65,
   className 
 }: ExperienceTickerProps) {
   return (

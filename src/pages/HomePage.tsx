@@ -22,7 +22,7 @@ export const HomePage = () => {
         <ExperienceTicker 
           yearsOfExperience={14}
           projectsCount={150}
-          customersCount={1000}
+          customersCount={65}
         />
       </div>
 

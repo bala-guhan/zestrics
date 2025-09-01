@@ -131,9 +131,9 @@ export const StatsSection = () => {
       number: 3,
       subtitle: "Our Offices",
       details: [
-        "Cyprus (HQ)",
+        "India",
         "USA",
-        "Lithuania"
+        "UK"
       ],
       actionText: "Contact Us",
       actionLink: "#contact",
