@@ -12,9 +12,10 @@ interface StatCardProps {
   actionLink?: string;
   delay?: number;
   icon: React.ReactNode;
+  showPlus?: boolean;
 }
 
-const StatCard = ({ title, number, subtitle, details, actionText, actionLink, delay = 0, icon }: StatCardProps) => {
+const StatCard = ({ title, number, subtitle, details, actionText, actionLink, delay = 0, icon, showPlus = true }: StatCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -43,7 +44,7 @@ const StatCard = ({ title, number, subtitle, details, actionText, actionLink, de
         
         <div className="text-4xl font-bold text-blue-500 mb-2">
           <NumberTicker value={number} />
-          <span className="text-2xl">+</span>
+          {showPlus && <span className="text-2xl">+</span>}
         </div>
         
         <p className="text-sm font-semibold text-gray-900 mb-4">{subtitle}</p>
@@ -137,7 +138,8 @@ export const StatsSection = () => {
       ],
       actionText: "Contact Us",
       actionLink: "#contact",
-      icon: <MapPin className="w-6 h-6" />
+      icon: <MapPin className="w-6 h-6" />,
+      showPlus: false
     }
   ];
 
@@ -172,6 +174,7 @@ export const StatsSection = () => {
               actionLink={stat.actionLink}
               delay={index * 0.1}
               icon={stat.icon}
+              showPlus={stat.showPlus}
             />
           ))}
         </div>
