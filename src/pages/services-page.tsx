@@ -117,6 +117,7 @@ export const ServicesPage = () => {
       )}
 
       {/* FAQ Section */}
+      <div className="px-4 md:px-32 bg-white pt-32"></div>
       <FAQSection />
 
       <div className="px-4 md:px-32 bg-white pt-32">

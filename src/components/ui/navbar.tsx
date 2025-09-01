@@ -6,12 +6,9 @@ import { navbarData } from "../../data/navbar-data";
 export const Navbar = () => {
   const [active, setActive] = useState<string | null>(null);
   const [hoveredServicesCategory, setHoveredServicesCategory] = useState<string | null>(null);
-  const [hoveredResearchCategory, setHoveredResearchCategory] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [mobileResearchOpen, setMobileResearchOpen] = useState(false);
   const [mobileServicesCategoryOpen, setMobileServicesCategoryOpen] = useState<string | null>(null);
-  const [mobileResearchCategoryOpen, setMobileResearchCategoryOpen] = useState<string | null>(null);
 
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -28,7 +25,6 @@ export const Navbar = () => {
 
   // Set default categories for desktop view
   const defaultServicesCategory = navbarData.services[0]?.title || null;
-  const defaultResearchCategory = navbarData.researchAndPatents[0]?.title || null;
 
   const handleMenuChange = (menuItem: string | null) => {
     setActive(menuItem);
@@ -36,25 +32,15 @@ export const Navbar = () => {
     if (menuItem !== "Services") {
       setHoveredServicesCategory(null);
     }
-    if (menuItem !== "Research") {
-      setHoveredResearchCategory(null);
-    }
   };
 
   // Get the currently displayed category for each dropdown
   const currentServicesCategory = hoveredServicesCategory || defaultServicesCategory;
-  const currentResearchCategory = hoveredResearchCategory || defaultResearchCategory;
 
   // Handle mobile category clicks
   const handleMobileServicesCategoryClick = (categoryTitle: string) => {
     setMobileServicesCategoryOpen(
       mobileServicesCategoryOpen === categoryTitle ? null : categoryTitle
-    );
-  };
-
-  const handleMobileResearchCategoryClick = (categoryTitle: string) => {
-    setMobileResearchCategoryOpen(
-      mobileResearchCategoryOpen === categoryTitle ? null : categoryTitle
     );
   };
 
@@ -74,7 +60,11 @@ export const Navbar = () => {
           </div>
 
           {/* Desktop Navigation Menu */}
-          <div className="hidden md:flex items-center space-x-8" onMouseLeave={() => handleMenuChange(null)}>
+          <div className="hidden md:flex items-center space-x-8">
+            {/* Home Link */}
+            <a href="/" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
+              Home
+            </a>
             {/* Services Dropdown */}
             <MenuItem setActive={handleMenuChange} active={active} item="Services">
               <div className="flex flex-col lg:flex-row p-6 min-w-[300px] lg:min-w-[800px]">
@@ -98,68 +88,39 @@ export const Navbar = () => {
 
                 {/* Sub-items Card - Always visible with default or hovered content */}
                 <div className="lg:flex-1 lg:pl-8">
-                  <div className="space-y-4">
-                    <h5 className="font-semibold text-gray-900 dark:text-white text-sm uppercase tracking-wider mb-4 transition-all duration-200">
-                      {currentServicesCategory}
-                    </h5>
-                    <div className="flex flex-col space-y-2">
-                      {navbarData.services
-                        .find(cat => cat.title === currentServicesCategory)
-                        ?.items.map((item, itemIndex) => (
-                          <HoveredLink key={itemIndex} href={item.href}>
-                            {item.title}
-                          </HoveredLink>
-                        ))}
-                    </div>
+                  <div className="flex flex-col space-y-2">
+                    {navbarData.services
+                      .find(cat => cat.title === currentServicesCategory)
+                      ?.items.map((item, itemIndex) => (
+                        <HoveredLink key={itemIndex} href={item.href}>
+                          {item.title}
+                        </HoveredLink>
+                      ))}
                   </div>
                 </div>
               </div>
             </MenuItem>
 
-            {/* Research & Patents Dropdown */}
-            <MenuItem setActive={handleMenuChange} active={active} item="Research">
-              <div className="flex flex-col lg:flex-row p-6 min-w-[300px] lg:min-w-[700px]">
-                {/* Main Categories */}
-                <div className="flex flex-row lg:flex-col space-x-4 lg:space-x-0 lg:space-y-4 lg:pr-8 lg:border-r lg:border-gray-200 lg:dark:border-gray-700 mb-4 lg:mb-0">
-                  {navbarData.researchAndPatents.map((category, categoryIndex) => (
-                    <div key={categoryIndex} className="relative">
-                      <button
-                        onMouseEnter={() => setHoveredResearchCategory(category.title)}
-                        className={`font-semibold text-sm uppercase tracking-wider cursor-pointer transition-all duration-200 ease-in-out ${
-                          currentResearchCategory === category.title
-                            ? "text-blue-600 dark:text-blue-400 font-bold"
-                            : "text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400"
-                        }`}
-                      >
-                        {category.title}
-                      </button>
-                    </div>
-                  ))}
-                </div>
+            {/* Solutions Dropdown - Coming soon */}
+            <MenuItem setActive={handleMenuChange} active={active} item="Solutions">
+              <div className="p-6 min-w-[240px]">
+                <p className="text-sm text-gray-700 dark:text-gray-300">Coming soon</p>
+              </div>
+            </MenuItem>
 
-                {/* Sub-items Card - Always visible with default or hovered content */}
-                <div className="lg:flex-1 lg:pl-8">
-                  <div className="space-y-3">
-                    <h5 className="font-semibold text-gray-900 dark:text-white text-sm uppercase tracking-wider mb-4 transition-all duration-200">
-                      {currentResearchCategory}
-                    </h5>
-                    <div className="flex flex-col space-y-2">
-                      {navbarData.researchAndPatents
-                        .find(cat => cat.title === currentResearchCategory)
-                        ?.items.map((item, itemIndex) => (
-                          <HoveredLink key={itemIndex} href={item.href}>
-                            {item.title}
-                          </HoveredLink>
-                        ))}
-                    </div>
-                  </div>
-                </div>
+            {/* Industries Dropdown - Coming soon */}
+            <MenuItem setActive={handleMenuChange} active={active} item="Industries">
+              <div className="p-6 min-w-[240px]">
+                <p className="text-sm text-gray-700 dark:text-gray-300">Coming soon</p>
               </div>
             </MenuItem>
 
             {/* Simple Navigation Items */}
+            <a href="/research" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
+              Research
+            </a>
             <a href="/about" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
-              About
+              About Us
             </a>
             <a href="/blogs" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
               Blogs
@@ -308,99 +269,34 @@ export const Navbar = () => {
                   )}
                 </div>
 
-                {/* Research & Patents Mobile Menu */}
-                <div>
-                  <button
-                    onClick={() => setMobileResearchOpen(!mobileResearchOpen)}
-                    className="flex items-center justify-between w-full text-left"
-                  >
-                    <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Research & Patents
-                    </h3>
-                    <svg
-                      className={`w-4 h-4 text-gray-500 dark:text-gray-400 transition-transform duration-200 ease-in-out ${
-                        mobileResearchOpen ? "rotate-90" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </button>
-                  
-                  {mobileResearchOpen && (
-                    <div className="mt-3 space-y-3 animate-in fade-in duration-200">
-                      {navbarData.researchAndPatents.map((category, categoryIndex) => (
-                        <div key={categoryIndex} className="ml-4">
-                          <button
-                            onClick={() => handleMobileResearchCategoryClick(category.title)}
-                            className="flex items-center justify-between w-full text-left mb-2"
-                          >
-                            <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                              {category.title}
-                            </h4>
-                            <svg
-                              className={`w-3 h-3 text-gray-400 transition-transform duration-200 ease-in-out ${
-                                mobileResearchCategoryOpen === category.title ? "rotate-90" : ""
-                              }`}
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 5l7 7-7 7"
-                              />
-                            </svg>
-                          </button>
-                          
-                          {mobileResearchCategoryOpen === category.title && (
-                            <div className="ml-4 space-y-1 animate-in fade-in duration-200">
-                              {category.items.map((item, itemIndex) => (
-                                <a
-                                  key={itemIndex}
-                                  href={item.href}
-                                  className="flex items-center text-sm text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-150"
-                                >
-                                  <svg
-                                    className="w-3 h-3 mr-2 text-gray-400"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      strokeWidth={2}
-                                      d="M9 5l7 7-7 7"
-                                    />
-                                  </svg>
-                                  {item.title}
-                                </a>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
 
                 {/* Other Navigation Items */}
                 <div className="space-y-2">
+                  <a href="/" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-150">
+                    Home
+                  </a>
+                  <a href="/research" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-150">
+                    Research
+                  </a>
+
+                  {/* Solutions - Coming soon */}
+                <div className="pt-2">
+                  <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                    Solutions
+                  </h3>
+                  <p className="ml-1 mt-2 text-sm text-gray-700 dark:text-gray-300">Coming soon</p>
+                </div>
+
+                {/* Industries - Coming soon */}
+                <div className="pt-2">
+                  <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                    Industries
+                  </h3>
+                  <p className="ml-1 mt-2 text-sm text-gray-700 dark:text-gray-300">Coming soon</p>
+                </div>
+                
                   <a href="/about" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-150">
-                    About
+                    About Us
                   </a>
                   <a href="/blogs" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-150">
                     Blogs

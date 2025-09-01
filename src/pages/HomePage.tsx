@@ -2,7 +2,7 @@ import { TextAnimate } from "../components/magicui/text-animate";
 import ParticleRingHero from "../components/hero-3d";
 import { ExperienceTicker } from "../components/ticker";
 import { AuroraText } from "../components/magicui/aurora-text";
-import { CanvasRevealEffectDemo } from "../components/ui/canvas-reveal-demo";
+import { ImageCardsSection } from "../components/ui/image-cards-section";
 import { PartnersCarousel } from "../components/ui/partners-carousel";
 import { NormalCardsSection } from "../components/ui/normal-cards-section";
 import { IndustriesSection } from "../components/ui/industries-section";
@@ -40,13 +40,13 @@ export const HomePage = () => {
                 and AI-driven insights to help organizations unlock the true potential 
                 of their data. By combining technical expertise with deep industry 
                 understanding, we transform raw information into actionable intelligence 
-                that supports strategic decisions, operational efficiency, and revenue growth. Our solutions go beyond dashboards—we build scalable analytics ecosystems that empower businesses to anticipate trends, optimize performance, and gain a sustainable competitive edge in today’s data-driven economy.
+                that supports strategic decisions, operational efficiency, and revenue growth. Our solutions go beyond dashboards—we build scalable analytics ecosystems that empower businesses to anticipate trends, optimize performance, and gain a sustainable competitive edge in today’s data-driven economy.
             </TextAnimate>
           </div>
         </div>
       </div>
 
-      <CanvasRevealEffectDemo />
+      <ImageCardsSection />
 
       {/* Services CTA Section */}
       <div className="px-4 md:px-32 bg-white mx-auto py-16 text-center">

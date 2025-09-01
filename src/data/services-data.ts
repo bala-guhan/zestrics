@@ -51,7 +51,7 @@ export const servicesTabsData: ServiceTabData[] = [
     title: "Big Data & Cloud Frameworks",
     value: "big-data-cloud",
     gradient: "bg-gradient-to-br from-blue-600 to-purple-600",
-    backgroundImage: "/bg-noisy-slate.jpg",
+    backgroundImage: "/noisy-background.jpg",
     subServices: [
       {
         title: "Data Warehouse",
@@ -151,7 +151,7 @@ export const servicesTabsData: ServiceTabData[] = [
     title: "Generative AI & GPT",
     value: "generative-ai-gpt",
     gradient: "bg-gradient-to-br from-purple-600 to-pink-600",
-    backgroundImage: "/bg-noisy-amber.jpg",
+    backgroundImage: "/noisy-background.jpg",
     subServices: [
       {
         title: "Generative AI Consulting",
@@ -189,7 +189,7 @@ export const servicesTabsData: ServiceTabData[] = [
     title: "Software Development",
     value: "software-development",
     gradient: "bg-gradient-to-br from-orange-600 to-red-600",
-    backgroundImage: "/noisy-bg-cyan.jpg",
+    backgroundImage: "/noisy-background.jpg",
     subServices: [
       {
         title: "Custom Web Development",

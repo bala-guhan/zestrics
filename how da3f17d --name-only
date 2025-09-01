@@ -1,0 +1,8 @@
+[33md54c788[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m added smooth scroll for contact section
+[33mda3f17d[m changes in navbar and normal card section
+[33m17ba596[m many many many
+[33mc3c1766[m add services page, add background animation in hero section
+[33m00934fa[m there you, the sitting which made the website, only testing and correction hereafter
+[33mb700889[m add services page with tabs/cards/lists, added careers page, added bento grid to show features, add footer and some redirections
+[33m16055de[m fix build error changes through typescript config changes
+[33m1f4ef56[m added more functional components - pre-style, font-fix-release

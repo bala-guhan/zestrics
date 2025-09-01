@@ -3,7 +3,6 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
 import * as THREE from "three";
 import { InteractiveHoverButton } from "./magicui/interactive-hover-button";
-import { ShimmerButton } from "./magicui/shimmer-button";
 import { AuroraText } from "./magicui/aurora-text";
 import { TextAnimate } from "./magicui/text-animate";
 
@@ -165,18 +164,18 @@ const ParticleRingHero: React.FC = () => {
             <InteractiveHoverButton 
               className="text-black"
               onClick={() => {
-                window.location.href = "/services";
+                window.location.href = "/#contact";
               }}
             >
-              Explore Services
+              Reach out
             </InteractiveHoverButton>
-            <ShimmerButton
+            {/* <ShimmerButton
               onClick={() => {
                 window.location.href = "/#contact";
               }}
             >
               Reach out
-            </ShimmerButton>
+            </ShimmerButton> */}
           </div>
         </div>
       </div>
