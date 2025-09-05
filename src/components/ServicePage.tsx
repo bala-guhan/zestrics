@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { Navbar } from "./ui/navbar";
 import { Footer } from "./ui/footer";
+import { FAQSection } from "./ui/faq-section";
 
 export interface ServicePageProps {
   // Hero Section
@@ -71,10 +72,11 @@ export interface ServicePageProps {
     category: string;
   }>;
   
-  // FAQ Section
-  faqTitle: string;
-  faqDescription: string;
-  faqs: Array<{
+  
+  // FAQ Section (optional - if not provided, uses standalone FAQSection)
+  faqTitle?: string;
+  faqDescription?: string;
+  faqs?: Array<{
     question: string;
     answer: string;
   }>;
@@ -108,9 +110,6 @@ export function ServicePage({
   faqTitle,
   faqDescription,
   faqs,
-  ctaTitle,
-  ctaDescription,
-  ctaGradient
 }: ServicePageProps) {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -524,107 +523,79 @@ export function ServicePage({
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              {faqTitle}
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
-              {faqDescription}
-            </p>
-          </motion.div>
+      {faqs && faqs.length > 0 ? (
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                {faqTitle || "Frequently Asked Questions"}
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300">
+                {faqDescription || "Get answers to common questions"}
+              </p>
+            </motion.div>
 
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
-              >
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full p-6 text-left focus:outline-none"
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
                 >
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                      {faq.question}
-                    </h3>
-                    <svg
-                      className={`w-6 h-6 text-blue-500 transition-transform duration-200 ${
-                        expandedFaq === index ? 'rotate-45' : ''
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                      />
-                    </svg>
-                  </div>
-                </button>
-                {expandedFaq === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-6 pb-6"
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="w-full p-6 text-left focus:outline-none"
                   >
-                    <p className="text-gray-600 dark:text-gray-300">
-                      {faq.answer}
-                    </p>
-                  </motion.div>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className={`py-16 px-4 ${ctaGradient}`}>
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold text-white mb-6">
-              {ctaTitle}
-            </h2>
-            <p className="text-xl text-blue-100 mb-8">
-              {ctaDescription}
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/#footer"
-                className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
-              >
-                Get Free Consultation
-              </a>
-              <a
-                href="/#footer"
-                className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors"
-              >
-                View Case Studies
-              </a>
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                        {faq.question}
+                      </h3>
+                      <svg
+                        className={`w-6 h-6 text-blue-500 transition-transform duration-200 ${
+                          expandedFaq === index ? 'rotate-45' : ''
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                  {expandedFaq === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="px-6 pb-6"
+                    >
+                      <p className="text-gray-600 dark:text-gray-300">
+                        {faq.answer}
+                      </p>
+                    </motion.div>
+                  )}
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
+      ) : (
+        <FAQSection />
+      )}
+
 
       <Footer />
     </div>

@@ -101,19 +101,15 @@ export const Navbar = () => {
               </div>
             </MenuItem>
 
-            {/* Solutions Dropdown - Coming soon */}
-            <MenuItem setActive={handleMenuChange} active={active} item="Solutions">
-              <div className="p-6 min-w-[240px]">
-                <p className="text-sm text-gray-700 dark:text-gray-300">Coming soon</p>
-              </div>
-            </MenuItem>
+            {/* Solutions Link */}
+            <a href="/solutions" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
+              Solutions
+            </a>
 
-            {/* Industries Dropdown - Coming soon */}
-            <MenuItem setActive={handleMenuChange} active={active} item="Industries">
-              <div className="p-6 min-w-[240px]">
-                <p className="text-sm text-gray-700 dark:text-gray-300">Coming soon</p>
-              </div>
-            </MenuItem>
+            {/* Industries Link */}
+            <a href="/industries" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
+              Industries
+            </a>
 
             {/* Simple Navigation Items */}
             <a href="/research" className="text-gray-900 hover:opacity-[0.9] dark:text-white transition-opacity font-medium">
@@ -279,20 +275,18 @@ export const Navbar = () => {
                     Research
                   </a>
 
-                  {/* Solutions - Coming soon */}
+                  {/* Solutions */}
                 <div className="pt-2">
-                  <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <a href="/solutions" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-150">
                     Solutions
-                  </h3>
-                  <p className="ml-1 mt-2 text-sm text-gray-700 dark:text-gray-300">Coming soon</p>
+                  </a>
                 </div>
 
-                {/* Industries - Coming soon */}
+                  {/* Industries */}
                 <div className="pt-2">
-                  <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <a href="/industries" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-150">
                     Industries
-                  </h3>
-                  <p className="ml-1 mt-2 text-sm text-gray-700 dark:text-gray-300">Coming soon</p>
+                  </a>
                 </div>
                 
                   <a href="/about" className="block text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-150">

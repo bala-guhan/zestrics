@@ -35,6 +35,8 @@ import { AIChatbotDevelopmentPage } from './pages/ai-chatbot-development';
 import { AIAgentStorePage } from './pages/ai-agent-store';
 import { CustomWebDevelopmentPage } from './pages/custom-web-development';
 import { AIMobileAppDevelopmentPage } from './pages/ai-mobile-app-development';
+import { SolutionsPage } from './pages/solutions-page';
+import { IndustriesPage } from './pages/industries-page';
 import HeroWithRibbon from './components/ribbon';
 
 export default function App() {
@@ -147,6 +149,12 @@ export default function App() {
         {/* Software Development Service Pages */}
         <Route path="/custom-web-development" element={<CustomWebDevelopmentPage />} />
         <Route path="/ai-mobile-app-development" element={<AIMobileAppDevelopmentPage />} />
+        
+        {/* Solutions Page */}
+        <Route path="/solutions" element={<SolutionsPage />} />
+        
+        {/* Industries Page */}
+        <Route path="/industries" element={<IndustriesPage />} />
         
         {/* Legacy service routes for backward compatibility */}
         <Route path="/business-intelligence" element={
