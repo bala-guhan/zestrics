@@ -15,10 +15,6 @@ export function CareersPage () {
         ? jobsData 
         : jobsData.filter(job => job.category === selectedCategory);
 
-    const handleApply = (jobTitle: string) => {
-        console.log(`Applied for: ${jobTitle}`);
-        // TODO: Implement application logic
-    };
 
     return (
         <div className="min-h-screen">
@@ -60,7 +56,6 @@ export function CareersPage () {
                         <JobCard
                             key={`${job.title}-${index}`}
                             job={job}
-                            onApply={handleApply}
                         />
                     ))}
                 </div>

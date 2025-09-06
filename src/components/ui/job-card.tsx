@@ -1,6 +1,5 @@
 "use client";
 import { motion, AnimatePresence } from "motion/react";
-import { ShimmerButton as Button } from "../magicui/shimmer-button";
 import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 
@@ -12,18 +11,10 @@ export interface JobData {
 
 interface JobCardProps {
   job: JobData;
-  onApply?: (jobTitle: string) => void;
 }
 
-export const JobCard = ({ job, onApply }: JobCardProps) => {
+export const JobCard = ({ job }: JobCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
-
-  const handleApply = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (onApply) {
-      onApply(job.title);
-    }
-  };
 
   const handleCardClick = () => {
     setIsExpanded(!isExpanded);
@@ -60,13 +51,6 @@ export const JobCard = ({ job, onApply }: JobCardProps) => {
               <ChevronRight size={20} />
             </motion.div>
 
-            {/* Apply Button */}
-            <Button
-              onClick={handleApply}
-              className="px-6 py-2 text-sm font-medium"
-            >
-              Apply Now
-            </Button>
           </div>
         </div>
       </div>
@@ -85,6 +69,10 @@ export const JobCard = ({ job, onApply }: JobCardProps) => {
                <div className="pt-4">
                  <div className="text-gray-700 leading-relaxed text-sm">
                    {job.description}
+                 </div>
+                 <br />
+                 <div className="text-gray-700 font-semibold leading-relaxed text-sm">
+                   Reach out to us at <span className="text-blue-500">contact@zestrics.com</span>
                  </div>
                </div>
              </div>

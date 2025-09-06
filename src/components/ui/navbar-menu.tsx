@@ -68,7 +68,7 @@ export const MenuItem = ({
         >
           {/* Invisible hover bridge that fills the visual gap without overlapping the navbar */}
           <div className="w-full h-[1.8rem]" aria-hidden />
-          <div className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl">
+          <div className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl border border-black/[0.2] dark:border-white/[0.2] shadow-xl">
             <div className="w-max h-full p-4">
               {children}
             </div>

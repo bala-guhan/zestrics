@@ -23,8 +23,6 @@ export const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
-  // Set default categories for desktop view
-  const defaultServicesCategory = navbarData.services[0]?.title || null;
 
   const handleMenuChange = (menuItem: string | null) => {
     setActive(menuItem);
@@ -34,8 +32,6 @@ export const Navbar = () => {
     }
   };
 
-  // Get the currently displayed category for each dropdown
-  const currentServicesCategory = hoveredServicesCategory || defaultServicesCategory;
 
   // Handle mobile category clicks
   const handleMobileServicesCategoryClick = (categoryTitle: string) => {
@@ -67,36 +63,57 @@ export const Navbar = () => {
             </a>
             {/* Services Dropdown */}
             <MenuItem setActive={handleMenuChange} active={active} item="Services">
-              <div className="flex flex-col lg:flex-row p-6 min-w-[300px] lg:min-w-[800px]">
-                {/* Main Categories */}
-                <div className="flex flex-row lg:flex-col space-x-4 lg:space-x-0 lg:space-y-4 lg:pr-8 lg:border-r lg:border-gray-200 lg:dark:border-gray-700 mb-4 lg:mb-0">
+              <div className="p-6 min-w-[300px]">
+                {/* Main Categories Only */}
+                <div className="flex flex-col space-y-4">
                   {navbarData.services.map((category, categoryIndex) => (
-                    <div key={categoryIndex} className="relative">
-                      <button
+                    <div 
+                      key={categoryIndex} 
+                      className="relative group"
+                      onMouseLeave={() => setHoveredServicesCategory(null)}
+                    >
+                      <div
                         onMouseEnter={() => setHoveredServicesCategory(category.title)}
-                        className={`font-semibold text-sm uppercase tracking-wider cursor-pointer transition-all duration-200 ease-in-out ${
-                          currentServicesCategory === category.title
-                            ? "text-blue-600 dark:text-blue-400 font-bold"
-                            : "text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400"
-                        }`}
+                        className="cursor-pointer transition-all duration-200 ease-in-out text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 w-full text-left font-semibold text-sm uppercase tracking-wider py-2 px-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800"
                       >
                         {category.title}
-                      </button>
+                        <svg 
+                          className="w-4 h-4 inline-block ml-2 opacity-50" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                      
+                      {/* Sub-services dropdown - appears on hover */}
+                      {hoveredServicesCategory === category.title && (
+                        <div 
+                          className="absolute left-full top-0 ml-2 animate-in fade-in duration-200 z-[60]"
+                          onMouseEnter={() => setHoveredServicesCategory(category.title)}
+                        >
+                          {/* Invisible bridge to prevent dropdown from closing when moving cursor */}
+                          <div className="absolute -left-2 top-0 w-2 h-full" />
+                          
+                          <div className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl border border-black/[0.2] dark:border-white/[0.2] shadow-xl min-w-[280px]">
+                            <div className="p-4">
+                              <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">
+                                {category.title}
+                              </h4>
+                              <div className="flex flex-col space-y-2">
+                                {category.items.map((item, itemIndex) => (
+                                  <HoveredLink key={itemIndex} href={item.href}>
+                                    {item.title}
+                                  </HoveredLink>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
-                </div>
-
-                {/* Sub-items Card - Always visible with default or hovered content */}
-                <div className="lg:flex-1 lg:pl-8">
-                  <div className="flex flex-col space-y-2">
-                    {navbarData.services
-                      .find(cat => cat.title === currentServicesCategory)
-                      ?.items.map((item, itemIndex) => (
-                        <HoveredLink key={itemIndex} href={item.href}>
-                          {item.title}
-                        </HoveredLink>
-                      ))}
-                  </div>
                 </div>
               </div>
             </MenuItem>
