@@ -144,35 +144,6 @@ export const aiProductDevelopmentData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have successfully launched AI-powered products with us",
-  testimonials: [
-    {
-      name: "Alex Johnson",
-      role: "Product Director",
-      company: "InnovateTech Solutions",
-      content: "Zestrics helped us transform our vision into a market-leading AI product. Their expertise in product development and AI integration was exceptional throughout the entire process.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Maria Santos",
-      role: "CEO",
-      company: "AIStartup Inc",
-      content: "Their AI product development services accelerated our time-to-market by 40%. The scalable architecture they designed has supported our rapid growth perfectly.",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "David Kim",
-      role: "CTO",
-      company: "TechForward Corp",
-      content: "The AI product they helped us develop has become our competitive advantage. Their focus on practical innovation and real-world impact was exactly what we needed.",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "AI Product Development Insights",

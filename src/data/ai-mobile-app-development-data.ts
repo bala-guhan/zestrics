@@ -144,35 +144,6 @@ export const aiMobileAppDevelopmentData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have successfully implemented AI mobile apps with us",
-  testimonials: [
-    {
-      name: "David Kim",
-      role: "Head of Mobile Strategy",
-      company: "MobileFirst Solutions",
-      content: "Zestrics developed an AI-powered mobile app that transformed our customer engagement. The personalization features and predictive analytics have increased user retention by 60%.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Maria Santos",
-      role: "VP of Product Development",
-      company: "TechInnovate Corp",
-      content: "Their AI mobile app development services helped us create an intelligent chatbot that handles 80% of customer queries. The voice recognition and NLP capabilities are outstanding.",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Alex Thompson",
-      role: "CTO",
-      company: "E-commerce Solutions",
-      content: "The AI mobile app they built for us includes advanced computer vision features for product recognition. The app is incredibly intelligent and provides a seamless user experience.",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "AI Mobile App Development Insights",

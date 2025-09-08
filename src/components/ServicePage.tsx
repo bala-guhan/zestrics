@@ -48,17 +48,6 @@ export interface ServicePageProps {
     position: 'left' | 'right';
   }>;
   
-  // Testimonials
-  testimonialsTitle: string;
-  testimonialsDescription: string;
-  testimonials: Array<{
-    name: string;
-    role: string;
-    company: string;
-    content: string;
-    avatar: string;
-    rating: number;
-  }>;
   
   // Blog Section
   blogTitle: string;
@@ -100,9 +89,6 @@ export function ServicePage({
   roadmapTitle,
   roadmapDescription,
   roadmapSteps,
-  testimonialsTitle,
-  testimonialsDescription,
-  testimonials,
   blogTitle,
   blogDescription,
   blogCategories,
@@ -112,18 +98,8 @@ export function ServicePage({
   faqs,
 }: ServicePageProps) {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-
   const toggleFaq = (index: number) => {
     setExpandedFaq(expandedFaq === index ? null : index);
-  };
-
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   return (
@@ -358,82 +334,6 @@ export function ServicePage({
         </div>
       </section>
 
-      {/* Testimonials Carousel */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              {testimonialsTitle}
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
-              {testimonialsDescription}
-            </p>
-          </motion.div>
-
-          <motion.div
-            key={currentTestimonial}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg text-center"
-          >
-            <div className="flex justify-center mb-6">
-              {[...Array(5)].map((_, i) => (
-                <svg
-                  key={i}
-                  className={`w-6 h-6 ${i < testimonials[currentTestimonial].rating ? 'text-yellow-400' : 'text-gray-300'}`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 italic">
-              "{testimonials[currentTestimonial].content}"
-            </p>
-            <div className="flex items-center justify-center">
-              <img
-                src={testimonials[currentTestimonial].avatar}
-                alt={testimonials[currentTestimonial].name}
-                className="w-12 h-12 rounded-full mr-4"
-              />
-              <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white">
-                  {testimonials[currentTestimonial].name}
-                </h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {testimonials[currentTestimonial].role} at {testimonials[currentTestimonial].company}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          <div className="flex justify-center mt-8 space-x-4">
-            <button
-              onClick={prevTestimonial}
-              className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              onClick={nextTestimonial}
-              className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* Blog Carousel Section */}
       <section className="py-16 px-4 bg-white dark:bg-gray-900">

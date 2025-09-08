@@ -144,35 +144,6 @@ export const biDataVisualizationData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have transformed their reporting with our BI solutions",
-  testimonials: [
-    {
-      name: "Rachel Green",
-      role: "Head of Business Intelligence",
-      company: "DataViz Corp",
-      content: "Zestrics helped us build interactive dashboards that transformed how we report to stakeholders. The insights are now accessible to everyone in the organization.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Tom Anderson",
-      role: "VP of Operations",
-      company: "BusinessMetrics Inc",
-      content: "Their self-service BI platform empowered our business teams to create their own reports. We reduced reporting time by 80% and improved decision-making significantly.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Sarah Johnson",
-      role: "CTO",
-      company: "InsightTech",
-      content: "The data visualization solutions they created for us made complex data accessible to all stakeholders. The visual storytelling approach was game-changing.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "BI & Data Visualization Insights",

@@ -144,36 +144,6 @@ export const generativeAIConsultingData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have successfully adopted Generative AI with our consulting services",
-  testimonials: [
-    {
-      name: "Dr. Emily Rodriguez",
-      role: "Chief Innovation Officer",
-      company: "InnovateTech Solutions",
-      content: "Zestrics helped us identify GenAI opportunities that transformed our content creation and customer support processes. Their strategic guidance was invaluable for our successful adoption.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Michael Chen",
-      role: "VP of Digital Transformation",
-      company: "FutureCorp Inc",
-      content: "Their GenAI consulting services helped us build a comprehensive roadmap that accelerated our innovation while ensuring responsible AI adoption. The results exceeded our expectations.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Sarah Johnson",
-      role: "CTO",
-      company: "TechForward Solutions",
-      content: "The ethical AI framework they helped us establish gave us confidence to scale our GenAI initiatives responsibly. Their expertise in governance and compliance was exceptional.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
-  
   // Blog Section
   blogTitle: "Generative AI Consulting Insights",
   blogDescription: "Stay updated with the latest trends and best practices in Generative AI consulting",

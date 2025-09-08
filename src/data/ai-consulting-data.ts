@@ -144,35 +144,6 @@ export const aiConsultingData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have transformed their business with our AI consulting services",
-  testimonials: [
-    {
-      name: "Dr. Sarah Chen",
-      role: "Chief Data Officer",
-      company: "TechInnovate Corp",
-      content: "Zestrics helped us develop a comprehensive AI strategy that transformed our business operations. Their expertise in cutting through the hype and focusing on practical solutions was invaluable.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Michael Rodriguez",
-      role: "VP of Technology",
-      company: "DataFirst Solutions",
-      content: "Their AI consulting services helped us identify the right use cases and implement solutions that delivered measurable business impact. The strategic guidance was exceptional.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Lisa Thompson",
-      role: "CTO",
-      company: "FutureTech Inc",
-      content: "The AI governance and ethics framework they helped us establish gave us confidence to scale our AI initiatives responsibly. Their expertise is world-class.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "AI Consulting Insights",

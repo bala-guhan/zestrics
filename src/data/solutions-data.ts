@@ -157,43 +157,6 @@ export const solutionsData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "Client Success Stories",
-  testimonialsDescription: "Hear from businesses that have transformed their operations with our AI solutions",
-  testimonials: [
-    {
-      name: "Sarah Johnson",
-      role: "Head of Digital Innovation",
-      company: "RetailTech Corp",
-      content: "Zestrics' computer vision solution revolutionized our quality control process. We've seen a 75% reduction in defects and significant cost savings in our manufacturing operations.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Michael Chen",
-      role: "CTO",
-      company: "FinanceFlow Solutions",
-      content: "Their custom LLM for document processing has transformed our workflow. We now process documents 10x faster with 99% accuracy, dramatically improving our customer service.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "VP of Customer Experience",
-      company: "E-Commerce Plus",
-      content: "The recommendation system increased our conversion rate by 40% and customer satisfaction scores by 35%. The ROI was evident within the first quarter of implementation.",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "David Park",
-      role: "Director of Operations",
-      company: "MediaStream Inc",
-      content: "Zestrics' NLP solution for social media analytics provides insights we never had before. We can now predict trends and adjust our content strategy in real-time.",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "Latest Insights",

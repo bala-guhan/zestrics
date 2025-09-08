@@ -144,35 +144,6 @@ export const aiMlData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from businesses that have transformed their operations with our AI solutions",
-  testimonials: [
-    {
-      name: "David Kim",
-      role: "Head of AI",
-      company: "TechStart Inc",
-      content: "Zestrics helped us implement AI solutions that increased our operational efficiency by 60%. Their expertise in machine learning is unmatched.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Lisa Wang",
-      role: "CTO",
-      company: "InnovateCorp",
-      content: "The AI consulting services provided by Zestrics transformed our business strategy. We now have a clear roadmap for AI implementation.",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Robert Martinez",
-      role: "VP of Technology",
-      company: "FutureTech Solutions",
-      content: "Their ML development team delivered a custom solution that perfectly fits our business needs. The results exceeded our expectations.",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "Our Blog",

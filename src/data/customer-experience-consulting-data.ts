@@ -144,36 +144,6 @@ export const customerExperienceConsultingData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have transformed their customer experience with our consulting services",
-  testimonials: [
-    {
-      name: "Rachel Thompson",
-      role: "VP of Customer Experience",
-      company: "CustomerFirst Corp",
-      content: "Zestrics helped us transform our customer experience strategy. Their journey mapping and analytics insights revealed opportunities we never knew existed.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Mark Davis",
-      role: "Head of Digital Experience",
-      company: "DigitalEngage Solutions",
-      content: "Their customer experience consulting services helped us increase customer satisfaction by 40% and improve retention rates significantly.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Lisa Chen",
-      role: "Chief Customer Officer",
-      company: "ExperienceTech Inc",
-      content: "The personalized experience strategies they developed have become our competitive advantage and are driving sustainable business growth.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
-  
   // Blog Section
   blogTitle: "Customer Experience Insights",
   blogDescription: "Stay updated with the latest trends and best practices in customer experience consulting",

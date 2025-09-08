@@ -144,35 +144,6 @@ export const gptIntegrationData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have successfully integrated GPT with our services",
-  testimonials: [
-    {
-      name: "Sarah Johnson",
-      role: "Head of Digital Innovation",
-      company: "TechFlow Solutions",
-      content: "Zestrics helped us integrate GPT into our customer service platform. The results were incredible - we saw a 70% reduction in response times and significantly improved customer satisfaction.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Michael Chen",
-      role: "VP of Operations",
-      company: "EnterpriseCorp Inc",
-      content: "Their GPT integration services transformed our knowledge management system. We can now process and summarize documents in minutes instead of hours.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Lisa Rodriguez",
-      role: "CTO",
-      company: "InnovateTech Solutions",
-      content: "The GPT integration they built for our CRM has revolutionized how we interact with customers. It's like having an intelligent assistant for every team member.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "GPT Integration Insights",

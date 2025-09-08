@@ -144,35 +144,6 @@ export const modernDataArchitectureData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have transformed their data architecture",
-  testimonials: [
-    {
-      name: "Jennifer Smith",
-      role: "Chief Data Officer",
-      company: "DigitalCorp",
-      content: "Zestrics helped us modernize our data architecture, enabling real-time analytics and reducing costs by 50%. Their cloud-native approach was game-changing.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Alex Thompson",
-      role: "VP of Engineering",
-      company: "TechInnovate",
-      content: "The modern data architecture they designed for us supports our AI initiatives and scales effortlessly. Exceptional expertise and delivery.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Maria Garcia",
-      role: "CTO",
-      company: "FutureSystems",
-      content: "Their data mesh implementation empowered our business teams while maintaining governance. The results exceeded our expectations.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "Modern Data Architecture Insights",

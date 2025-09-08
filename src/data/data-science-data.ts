@@ -144,35 +144,6 @@ export const dataScienceData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have transformed their business with data science",
-  testimonials: [
-    {
-      name: "Dr. Emily Chen",
-      role: "Head of Analytics",
-      company: "DataInsight Corp",
-      content: "Zestrics helped us unlock the full potential of our data through advanced analytics and predictive modeling. Their data science solutions have transformed how we make decisions.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Robert Martinez",
-      role: "VP of Operations",
-      company: "OptimizeTech Solutions",
-      content: "Their predictive analytics models have given us a competitive edge by forecasting market trends and customer behavior with remarkable accuracy.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Lisa Wang",
-      role: "Chief Data Officer",
-      company: "FutureData Inc",
-      content: "The customer analytics and personalization solutions they built have significantly improved our customer engagement and retention rates.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "Data Science Insights",

@@ -144,36 +144,6 @@ export const cloudDevopsData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have transformed their operations with our cloud and DevOps services",
-  testimonials: [
-    {
-      name: "Sarah Johnson",
-      role: "VP of Engineering",
-      company: "TechFlow Inc",
-      content: "Zestrics helped us migrate to the cloud and implement DevOps practices that reduced our deployment time by 80%. Their expertise in cloud-native solutions is outstanding.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "David Kim",
-      role: "CTO",
-      company: "CloudScale Solutions",
-      content: "Their DevOps automation services transformed our development process. We now deploy multiple times per day with confidence and have significantly improved our reliability.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Maria Rodriguez",
-      role: "Head of Operations",
-      company: "DigitalFirst Corp",
-      content: "The cloud infrastructure and management services provided by Zestrics have given us the scalability and reliability we needed to support our rapid growth.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
-  
   // Blog Section
   blogTitle: "Cloud & DevOps Insights",
   blogDescription: "Stay updated with the latest trends and best practices in cloud computing and DevOps",

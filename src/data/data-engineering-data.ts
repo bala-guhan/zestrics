@@ -144,36 +144,6 @@ export const dataEngineeringData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have transformed their data engineering capabilities",
-  testimonials: [
-    {
-      name: "David Kim",
-      role: "Head of Data Engineering",
-      company: "TechStart Inc",
-      content: "Zestrics helped us build a modern data engineering platform that processes millions of records daily. Their expertise in cloud-native solutions is unmatched.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Lisa Wang",
-      role: "CTO",
-      company: "InnovateCorp",
-      content: "The data engineering solutions provided by Zestrics transformed our data quality and processing capabilities. We now have reliable, real-time insights.",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Robert Martinez",
-      role: "VP of Technology",
-      company: "FutureTech Solutions",
-      content: "Their data pipeline architecture reduced our processing time by 70% while improving data quality significantly. Exceptional results!",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
-  
   // Blog Section
   blogTitle: "Data Engineering Insights",
   blogDescription: "Stay updated with the latest trends and best practices in data engineering",

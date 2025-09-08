@@ -144,36 +144,6 @@ export const bigDataDevelopmentData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have built custom big data solutions with us",
-  testimonials: [
-    {
-      name: "Mark Davis",
-      role: "Head of Data Engineering",
-      company: "BigDataCorp",
-      content: "Zestrics helped us build a custom big data platform that processes millions of records daily. Their development expertise and attention to detail were exceptional.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Lisa Chen",
-      role: "CTO",
-      company: "DataTech Solutions",
-      content: "Their custom analytics application development transformed how we analyze our data. The solutions are scalable, performant, and perfectly tailored to our needs.",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Robert Wilson",
-      role: "VP of Technology",
-      company: "InnovateData",
-      content: "The big data development services provided by Zestrics exceeded our expectations. They delivered a robust, scalable solution that drives real business value.",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
-  
   // Blog Section
   blogTitle: "Big Data Development Insights",
   blogDescription: "Stay updated with the latest trends and best practices in big data development",

@@ -144,36 +144,6 @@ export const dataWarehousingData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have transformed their data strategy with our warehousing solutions",
-  testimonials: [
-    {
-      name: "Sarah Johnson",
-      role: "CTO",
-      company: "TechCorp Solutions",
-      content: "The data warehouse implementation by Zestrics transformed our business intelligence capabilities. We now have real-time insights that drive our strategic decisions.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Michael Chen",
-      role: "Data Director",
-      company: "Global Retail Inc",
-      content: "Their cloud data warehouse solution reduced our infrastructure costs by 40% while improving performance significantly. Highly recommended!",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "VP of Analytics",
-      company: "FinTech Innovations",
-      content: "The data warehouse architecture they built for us handles millions of transactions daily with 99.9% uptime. Exceptional quality and reliability.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
-  
   // Blog Section
   blogTitle: "Data Warehousing Insights",
   blogDescription: "Stay updated with the latest trends and best practices in data warehousing",

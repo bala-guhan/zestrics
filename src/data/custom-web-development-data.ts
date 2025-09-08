@@ -144,36 +144,6 @@ export const customWebDevelopmentData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have successfully implemented custom web solutions with us",
-  testimonials: [
-    {
-      name: "Emily Rodriguez",
-      role: "Marketing Director",
-      company: "DigitalFirst Solutions",
-      content: "Zestrics developed a custom website that perfectly captures our brand identity. The responsive design and seamless user experience have increased our conversion rates by 40%.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "James Wilson",
-      role: "CTO",
-      company: "TechInnovate Corp",
-      content: "Their custom web application development services transformed our business processes. The integration with our existing systems was seamless and the performance is outstanding.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Sarah Chen",
-      role: "VP of Digital Strategy",
-      company: "E-commerce Solutions",
-      content: "The custom web development project exceeded our expectations. The site loads incredibly fast, is highly secure, and provides an exceptional user experience across all devices.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
-  
   // Blog Section
   blogTitle: "Custom Web Development Insights",
   blogDescription: "Stay updated with the latest trends and best practices in custom web development",

@@ -144,35 +144,6 @@ export const aiAgentStoreData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have successfully deployed AI agents from our store",
-  testimonials: [
-    {
-      name: "Thomas Anderson",
-      role: "Head of Digital Transformation",
-      company: "EnterpriseTech Solutions",
-      content: "Zestrics' AI Agent Store helped us deploy intelligent agents across multiple departments. We've automated 60% of our routine tasks and improved operational efficiency significantly.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Rachel Green",
-      role: "VP of Operations",
-      company: "InnovateCorp Inc",
-      content: "Their pre-built AI agents were exactly what we needed. We deployed customer service and HR agents in just two weeks, and the results have been outstanding.",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Kevin Park",
-      role: "CTO",
-      company: "TechSolutions Ltd",
-      content: "The custom AI agents they developed for our sales and finance teams have transformed how we operate. The autonomous decision-making capabilities are game-changing.",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "AI Agent Store Insights",

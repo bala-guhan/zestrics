@@ -144,36 +144,6 @@ export const bigDataAnalyticsData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have transformed their business with big data analytics",
-  testimonials: [
-    {
-      name: "Carlos Rodriguez",
-      role: "Head of Analytics",
-      company: "DataCorp",
-      content: "Zestrics helped us build a big data analytics platform that processes petabytes of data. The insights we gained transformed our business strategy.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Anna Chen",
-      role: "VP of Data Science",
-      company: "AnalyticsPro",
-      content: "Their predictive analytics solutions helped us increase revenue by 25% through better customer insights and targeted marketing.",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "James Wilson",
-      role: "CTO",
-      company: "TechSolutions",
-      content: "The real-time analytics dashboards they built for us provide instant visibility into our operations. Game-changing insights!",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
-  
   // Blog Section
   blogTitle: "Big Data Analytics Insights",
   blogDescription: "Stay updated with the latest trends and best practices in big data analytics",

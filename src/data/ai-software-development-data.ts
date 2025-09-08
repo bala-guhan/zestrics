@@ -144,35 +144,6 @@ export const aiSoftwareDevelopmentData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have transformed their operations with our AI software solutions",
-  testimonials: [
-    {
-      name: "Jennifer Lee",
-      role: "VP of Engineering",
-      company: "TechInnovate Solutions",
-      content: "Zestrics helped us develop AI-powered software that automated our core processes and improved efficiency by 60%. Their expertise in AI integration was exceptional.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Carlos Rodriguez",
-      role: "CTO",
-      company: "SmartTech Corp",
-      content: "The AI software they developed for us has become our competitive advantage. The intelligent automation and customer engagement features are game-changing.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Amanda Chen",
-      role: "Product Director",
-      company: "FutureApps Inc",
-      content: "Their AI software development services delivered exactly what we needed - scalable, reliable solutions that integrate seamlessly with our existing systems.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "AI Software Development Insights",

@@ -144,35 +144,6 @@ export const generativeAIDevelopmentData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have successfully implemented GenAI solutions with us",
-  testimonials: [
-    {
-      name: "Alex Thompson",
-      role: "Head of AI Development",
-      company: "GenTech Solutions",
-      content: "Zestrics helped us develop custom GenAI applications that transformed our customer engagement. Their expertise in building intelligent, scalable solutions was exceptional.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Maria Santos",
-      role: "VP of Innovation",
-      company: "CreativeCorp Inc",
-      content: "Their GenAI development services helped us create personalized content generation systems that increased our customer engagement by 60%. The results were outstanding.",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "David Kim",
-      role: "CTO",
-      company: "DataInnovate Solutions",
-      content: "The synthetic data generation capabilities they built for us have significantly improved our AI model performance. Their practical approach to GenAI development made all the difference.",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "Generative AI Development Insights",

@@ -144,35 +144,6 @@ export const mlDevelopmentData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have successfully implemented custom ML solutions with us",
-  testimonials: [
-    {
-      name: "Dr. Alex Kim",
-      role: "Head of ML Engineering",
-      company: "MLTech Solutions",
-      content: "Zestrics helped us develop custom ML models that transformed our data processing capabilities. Their expertise in production-ready ML solutions was exceptional.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Sarah Martinez",
-      role: "VP of Technology",
-      company: "IntelliCorp",
-      content: "Their ML development services helped us build deep learning solutions that gave us a competitive edge. The integration with our existing systems was seamless.",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Michael Chen",
-      role: "CTO",
-      company: "DataDriven Inc",
-      content: "The custom ML models they developed have become our core competitive advantage. Their focus on production-ready solutions made all the difference.",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "ML Development Insights",

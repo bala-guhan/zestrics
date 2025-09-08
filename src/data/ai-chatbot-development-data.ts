@@ -144,35 +144,6 @@ export const aiChatbotDevelopmentData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have successfully implemented AI chatbots with us",
-  testimonials: [
-    {
-      name: "Jennifer Martinez",
-      role: "Head of Customer Experience",
-      company: "CustomerFirst Solutions",
-      content: "Zestrics developed an AI chatbot that transformed our customer service. We now handle 80% of customer queries automatically, reducing response times from hours to seconds.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Robert Wilson",
-      role: "VP of Digital Innovation",
-      company: "TechInnovate Corp",
-      content: "Their AI chatbot development services helped us create a personalized shopping assistant that increased our conversion rates by 45%. The results exceeded our expectations.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Amanda Lee",
-      role: "CTO",
-      company: "E-commerce Solutions",
-      content: "The multi-channel chatbot they built for us works seamlessly across our website, mobile app, and social media. It's like having a personal assistant for every customer.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "AI Chatbot Development Insights",

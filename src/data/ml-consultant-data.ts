@@ -144,35 +144,6 @@ export const mlConsultantData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "What Our Clients Say",
-  testimonialsDescription: "Hear from organizations that have successfully implemented ML with our guidance",
-  testimonials: [
-    {
-      name: "Dr. James Wilson",
-      role: "Chief Analytics Officer",
-      company: "MLTech Solutions",
-      content: "Zestrics helped us assess our ML readiness and develop a strategy that transformed our data capabilities. Their expertise in operationalizing ML models was invaluable.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Sarah Johnson",
-      role: "VP of Data Science",
-      company: "PredictiveCorp",
-      content: "Their ML consulting services helped us move from experimental models to production-ready solutions that deliver real business impact. The strategic guidance was exceptional.",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Michael Chen",
-      role: "CTO",
-      company: "IntelliTech Inc",
-      content: "The ML governance and operationalization frameworks they helped us establish have given us confidence to scale our ML initiatives responsibly and effectively.",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "ML Consulting Insights",

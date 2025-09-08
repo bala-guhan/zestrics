@@ -151,43 +151,6 @@ export const industriesData: ServicePageProps = {
     }
   ],
   
-  // Testimonials
-  testimonialsTitle: "Industry Success Stories",
-  testimonialsDescription: "Hear from industry leaders who have transformed their operations with our specialized AI solutions",
-  testimonials: [
-    {
-      name: "Dr. Sarah Mitchell",
-      role: "Chief Medical Officer",
-      company: "HealthTech Innovations",
-      content: "Zestrics' predictive analytics solution helped us reduce patient readmission rates by 35% and improve early disease detection accuracy by 60%. Their healthcare expertise is exceptional.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "James Rodriguez",
-      role: "VP of Digital Commerce",
-      company: "RetailMax Corp",
-      content: "The recommendation system increased our online conversion rates by 45% and average order value by 30%. The ROI was immediate and continues to grow quarter over quarter.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Lisa Chen",
-      role: "Chief Risk Officer",
-      company: "FinSecure Solutions",
-      content: "Their fraud detection system reduced false positives by 70% while catching 95% of actual fraud attempts. Our customer satisfaction and security have both improved dramatically.",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    },
-    {
-      name: "Michael Thompson",
-      role: "Operations Director",
-      company: "AutoLogistics Pro",
-      content: "The route optimization and predictive maintenance solutions reduced our operational costs by 25% and improved delivery times by 40%. Outstanding results across our entire fleet.",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-      rating: 5
-    }
-  ],
   
   // Blog Section
   blogTitle: "Industry Insights",
