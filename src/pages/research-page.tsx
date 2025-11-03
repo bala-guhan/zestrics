@@ -28,10 +28,9 @@ export const ResearchPage = () => {
       </div> */}
 
       {/* Research Section */}
-      <ResearchSection />
 
       {/* Zestrics R&D Section */}
-      <div className="py-20 px-4 md:px-32 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div className="py-20 mt-20 px-4 md:px-32 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           {/* R&D Hero */}
           <div className="text-center mb-16">
@@ -170,9 +169,7 @@ export const ResearchPage = () => {
 
           {/* Key Initiatives */}
           <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-12 text-center">
-              Key Initiatives
-            </h2>
+            <ResearchSection />
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-600">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">

@@ -106,7 +106,7 @@ export const ResearchSection = () => {
   }));
 
   return (
-    <div className="py-48 px-4 bg-white">
+    <div className="pb-48 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
